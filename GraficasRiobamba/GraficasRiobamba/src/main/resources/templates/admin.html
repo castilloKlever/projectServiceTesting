@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMINISTRADOR</title>
+    <link rel="stylesheet" href="css/styleAdmin.css">
+    <link rel="stylesheet" href="css/styleAgregarProducto.css">
+</head>
+<body>
+   <!--Start Cantainers-->
+
+   <section class="Gestion-Empresa">
+       <div class="menu">
+           <div class="user">
+                <div class="titulo-user">
+                   <h1>Graficas Riobamba </h1>
+                   <h3>Administrador</h3>
+               </div>
+           </div>
+           <div class="menu-gestion">
+               <div class="vista-previa">
+                      <div class="icon">
+                          <img src="img/img-admin/boton1.png" alt="">
+                      </div>
+                      <div class="boton">
+                            <a href="index.html" target="_blank">
+                             <button id="btn-vista-Previa" class="btn-vista-Previa">Página Web Cliente</button>
+                             </a>
+                      </div>
+               </div>
+
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="img/img-admin/boton3.png" alt="">
+                      </div>
+                      <div class="boton">
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
+                      </div>
+               </div>
+
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="img/img-admin/add1.png" alt="">
+                      </div>
+
+               </div>
+                <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="img/img-admin/add2.png" alt="">
+                      </div>
+
+               </div>
+                <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="img/img-admin/add3.png" alt="">
+                      </div>
+
+               </div>
+
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="img/img-admin/add4.png" alt="">
+                      </div>
+
+               </div>
+
+
+                 <div class="overlay"   id="overlay">
+                        <div class="popup" id="popup">
+                            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">
+                            <img src="img/img-admin/close.ico" alt="">
+                            </a>
+                            <h3 >Agregra Nuevo Producto</h3>
+                            <div class="formulario">
+                            <form action="">
+                                <select name="categorias" id="categorias">
+                                    <option value="colores">colores</option>
+                                     <option value="cuaderno">cuaderno</option>
+                                      <option value="hojas">hojas</option>
+
+                                </select>
+                                <input  img type="text" name="categoria" id="cat" placeholder="categoría">
+                                <input type="text" name="nombre" placeholder="nombre">
+                                <input type="text" name="descripcion" placeholder="descripción">
+                                <input type="text" name="cantidad" placeholder="cantidad">
+                                <input type="text" name="precio" placeholder="precio">
+                                 <input type="text" name="imagen" placeholder="imagen">
+
+                                <input href="#" type="button"  value="Agregar Producto" id="boton"  >
+
+                             </form>
+                      </div>
+
+                        </div>
+                     </div>
+
+           </div>
+       </div>
+       <div class="container">
+            <div class="container-sesion">
+               <div class="sesion">
+                      <div class="boton-sesion">
+                          <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
+                      </div>
+                      <div class="container-icon">
+                          <div class="icon-sesion">
+                              <img src="img/img-admin/user.png" alt="">
+                          </div>
+                      </div>
+               </div>
+            </div>
+            <div class="container-master" >
+                  <div class="container-notificaciones">
+                     <div class="notificacion" id="notificacion1">
+                         <div class="text-notificacion">
+                             <h1>30 </h1>
+                             <h3>Nuevos mensajes</h3>
+
+                         </div>
+                         <div class="icon-notificacion">
+                            <div class="icon">
+                                <img src="img/img-admin/notificacion1.png" id="img1" alt="">
+                            </div>
+
+                         </div>
+                     </div>
+                     <div class="notificacion" id="notificacion2" >
+                         <div class="text-notificacion">
+                             <h1>135 </h1>
+                             <h3>Visitantes diarios</h3>
+
+                         </div>
+                         <div class="icon-notificacion">
+                            <div class="icon">
+                                 <img src="img/img-admin/notificacion2.png" alt="">
+                            </div>
+
+                         </div>
+                     </div>
+                     <div class="notificacion" id="notificacion3">
+                         <div class="text-notificacion">
+                             <h1>90 </h1>
+                             <h3>Productos Registrados</h3>
+
+                         </div>
+                         <div class="icon-notificacion ">
+                            <div class="icon">
+                                <img src="img/img-admin/notificacion3.png"  class="hovericons" alt="">
+                            </div>
+
+                         </div>
+
+
+                     </div>
+
+                  </div>
+
+                  <div class="Titulo-Tabla">
+                      <h1>PRODUCTOS REGISTRADOS EN EL SISTEMA </h1>
+                  </div>
+                  <div class="container-tabla">
+                     <div class="tabla">
+                        <table >
+                           <tr>
+                              <th>Código</th>
+                              <th>Categoría </th>
+                              <th>Nombre </th>
+                              <th>Descripción</th>
+                              <th>Cantidad</th>
+                              <th>Precio</th>
+                              <th>Imagen</th>
+
+                           </tr>
+
+                           <tr>
+                              <td>3458</td>
+                              <td>Papelera</td>
+                              <td>Cuaderno</td>
+                              <td>100 hojas a cuadros</td>
+                              <td>2</td>
+                              <td>1</td>
+                              <td>Imagen</td>
+
+                           </tr>
+                           <tr>
+                              <td>3458</td>
+                              <td>Papelera</td>
+                              <td>Cuaderno</td>
+                              <td>100 hojas a cuadros</td>
+                              <td>2</td>
+                              <td>1</td>
+                              <td>Imagen</td>
+
+                           </tr>
+                           <tr>
+                              <td>3458</td>
+                              <td>Papelera</td>
+                              <td>Cuaderno</td>
+                              <td>100 hojas a cuadros</td>
+                              <td>2</td>
+                              <td>1</td>
+                              <td>Imagen</td>
+
+                           </tr>
+
+
+
+
+                        </table>
+
+                     </div>
+
+                  </div>
+
+
+
+            </div>
+
+       </div>
+   </section>
+<!--End Cantainers-->
+
+
+  <!--End section profile-->
+
+
+
+<!--LINKS JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/mainAdmin.js"></script>
+    <script src="js/agregarProducto.js"></script>
+</body>
+</html>

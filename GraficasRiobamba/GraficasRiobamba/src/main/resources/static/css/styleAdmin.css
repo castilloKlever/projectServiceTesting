@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* star css login */
+
+.loging{
+    min-height: 100vh;
+    background-image: url(../img/img-admin/fondo.png);
+    background-size: cover;
+    background-position: center;
+    padding: 15px;
+    width: 100%;
+    height:500px;
+    background-attachment: fixed;
+    position: relative;
+     color: white;
+
+}
+
+
+
+.loging .container{
+    float :right;
+    width: 44%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+    padding: 1%;
+
+}
+.loging .container .titulo-sistema{
+    width: 80%;
+    height: 20%;
+    border-left: 15px solid  black;
+
+    padding: 1%;
+    padding-left: 2%;
+
+}
+.loging .container .titulo-sistema h1{
+     color: black;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+
+
+}
+
+.loging .container .titulo-sistema h3{
+     color: black;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+
+
+
+}
+.loging .container .container-formulario{
+
+    width: 90%;
+    height: 80%;
+
+    text-align:center;
+
+}
+
+
+.loging .container .container-formulario .logo{
+
+    width: 25%;
+    height: 25%;
+
+    -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+      margin:0px auto;
+    padding: 3%;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+.loging .container .container-formulario .logo img{
+     width: 100%;
+    height: 100%;
+}
+
+.loging .container .container-formulario .formulario{
+    padding-top: 10%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+border: 2px solid black;
+    position: relative;
+
+}
+
+
+
+/* formulario */
+contenedor-mensaje{
+    width: 100%;
+    height: auto;
+       float: left;
+       font-family: monospace;
+}
+form{
+    width: 100%;
+    margin: auto;
+
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+.text-contactos{
+    color: black;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+input ,textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+   background-color: rgba(255,255,255,0.4);
+    color: black;
+
+}
+
+textarea{
+   max-width: 100%;
+ max-height: 50px;
+}
+
+#boton{
+    width: 50%;
+    margin-left:50%;
+
+
+}
+#boton:hover{
+    cursor: pointer;
+}
+
+#boton:any-link{
+
+}
+
+/* end css login */
+
+
+
+/* star css administra productos  */
+
+
+
+.Gestion-Empresa{
+
+    min-height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height:500px;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+
+}
+.Gestion-Empresa .menu{
+
+    width: 20%;
+    height: 100%;
+    background:#444c5c;
+}
+
+
+.Gestion-Empresa .menu .user{
+   width: 100%;
+    height: 75px;
+
+    background-color:#444c5c;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+
+
+}
+.Gestion-Empresa .menu .user .titulo-user{
+    width: 100%;
+    height: 100%;
+
+
+    padding: 1%;
+    padding-left: 4%;
+
+}
+.Gestion-Empresa .menu .user h1{
+     color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+
+
+}
+
+.Gestion-Empresa .menu .user h3{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+
+
+
+}
+.Gestion-Empresa .menu  .menu-gestion{
+    width: 100%;
+    height: auto;
+
+
+
+}
+.Gestion-Empresa .menu  .menu-gestion .vista-previa, .gestionar-producto{
+    margin-top: 10px;
+    width: 100%;
+    height: 75px;
+
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+
+
+.Gestion-Empresa .menu  .menu-gestion .vista-previa .icon, .gestionar-producto .icon{
+
+
+
+     width: 55px;
+    height: 50px;
+
+    -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+      margin:0px auto;
+    padding: 4%;
+  margin-top: 2.5%;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+
+}
+
+.Gestion-Empresa .menu  .menu-gestion .vista-previa .icon img, .gestionar-producto .icon img{
+
+    width: 100%;
+    height: 100%;
+
+}
+.Gestion-Empresa .menu  .menu-gestion .vista-previa .boton, .gestionar-producto .boton{
+    width: 70%;
+    height: 100%;
+
+   margin-right: 7px;
+
+
+}
+.Gestion-Empresa .container{
+
+    width: 80%;
+    height: 100%;
+
+
+}
+
+.Gestion-Empresa .container .container-sesion{
+    width: 100%;
+    height: 75px;
+   background-image: url(../img/img-admin/fondo2.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+
+}
+
+.Gestion-Empresa .container .container-sesion .sesion{
+    width: auto;
+       height: 75px;
+
+    float: right;
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.Gestion-Empresa .container .container-sesion .sesion .boton-sesion{
+    margin-left: 200px;
+    width: 50%;
+    height: 75px;
+
+
+}
+
+
+
+
+.Gestion-Empresa .container .container-sesion .sesion{
+
+    width: 50%;
+    height: 75px ;
+    background-color: transparent;
+    text-align: center;
+
+
+}
+.Gestion-Empresa .container .container-sesion .sesion .container-icon{
+    width: auto;
+    height: 100%;
+
+    padding: 1%;
+
+}
+.Gestion-Empresa .container .container-sesion .sesion .container-icon .icon-sesion{
+
+    width: 60px;
+    height: 60px;
+
+    -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+      margin:0px auto;
+    background-color: white;
+
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+
+    float: right;
+}
+
+.Gestion-Empresa .container .container-sesion .sesion .container-icon .icon-sesion img{
+    width: 100%;
+    height: 100%;
+}
+
+
+ .btn-cerrar-sesion{
+    margin-top: 20px;
+	padding: 0 20px;
+	margin-bottom: 20px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	color: #fff;
+	background-color: transparent;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+	cursor: pointer;
+     margin-left: 95px;
+}
+.btn-vista-Previa, .btn-gestionar-producto{
+   margin-top: 20px;
+	margin-bottom: 20px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	color: #fff;
+	background:#444c5c;
+	border-radius: 3px;
+
+	font-size: 20px;
+	cursor: pointer;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.btn-cerrar-sesion:hover {
+    	border: none;
+	background-color: transparent;
+    transform : scale(1.2);
+        -moz-transform : scale(1.2);      /* Firefox */
+        -webkit-transform : scale(1.2);   /* Chrome - Safari */
+        -o-transform : scale(1.2);        /* Opera */
+
+}
+
+
+.btn-vista-Previa:hover {
+
+	background-color: transparent;
+    transform : scale(1.2);
+        -moz-transform : scale(1.2);      /* Firefox */
+        -webkit-transform : scale(1.2);   /* Chrome - Safari */
+        -o-transform : scale(1.2);        /* Opera */
+
+}
+
+
+
+.btn-gestionar-producto:hover {
+
+background-color: transparent;
+    transform : scale(1.2);
+        -moz-transform : scale(1.2);      /* Firefox */
+        -webkit-transform : scale(1.2);   /* Chrome - Safari */
+        -o-transform : scale(1.2);        /* Opera */
+
+}
+
+
+
+/*star css container-master */
+.container .container-master{
+
+    width: 100%;
+    height: 592px;
+
+
+}
+
+.container .container-master .container-notificaciones{
+    width: 100%;
+    height: 30%;
+     background-color: white;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.container .container-master .container-notificaciones .notificacion{
+    width: 30%;
+    height: 100%;
+
+
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container .container-master .container-notificaciones .notificacion .text-notificacion{
+    width: 60%;
+    height: 100%;
+
+    padding-left: 10px;
+    padding-top: 25px;
+
+}
+.container .container-master .container-notificaciones .notificacion .text-notificacion h1{
+
+      color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+
+}
+.container .container-master .container-notificaciones .notificacion .text-notificacion h3{
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+
+}
+
+#notificacion1{
+
+    background-color: #6cac04 ;
+}
+#notificacion2{
+    background-color: #fc8414 ;
+}
+#notificacion3{
+    background-color: #347cb4;
+}
+
+#notificacion1:hover{
+     background-color: #3c3c3c ;
+}
+
+#notificacion2:hover{
+     background-color: #3c3c3c ;
+}
+
+#notificacion3:hover{
+     background-color: #3c3c3c ;
+}
+.container .container-master .container-notificaciones .notificacion  .icon-notificacion{
+    width: 40%;
+    height: 100%;
+
+}
+
+.container .container-master .container-notificaciones .notificacion  .icon-notificacion .icon{
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+
+    -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+   padding: 10%;
+    background-color: white;
+
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+#img1{
+    padding: 10%;
+}
+.container .container-master .container-notificaciones .notificacion  .icon-notificacion .icon img{
+    width: 100%;
+    height: 100%;
+}
+.icon:hover{
+     -moz-transform : scale(1.2);      /* Firefox */
+        -webkit-transform : scale(1.2);   /* Chrome - Safari */
+        -o-transform : scale(1.2);        /* Opera */
+}
+.container .container-master .Titulo-Tabla{
+    width: 100%;
+    height: 6%;
+
+}
+
+.container .container-master .Titulo-Tabla h1{
+    color: black;
+     font-size: 25px;
+    font-weight: 600;
+   padding-left: 1%;
+}
+
+.container .container-master .container-tabla{
+    width: 100%;
+    height: 64%;
+    padding: 1%;
+}
+
+.container .container-master .container-tabla .tabla{
+    width: 100%;
+    height: 100%;
+      background-color: white;
+    overflow-y: scroll;
+    color: black;
+    text-align: center;
+}
+.container .container-master .container-tabla .tabla table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+.container .container-master .container-tabla .tabla table td, th{
+    border: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container .container-master .container-tabla .tabla table td, th{
+    width: 14%;
+}
