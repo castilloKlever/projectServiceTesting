@@ -3,11 +3,13 @@ package com.grafrio.GraficasRiobamba.entities;
 
 import java.util.UUID;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "productos")
@@ -15,8 +17,9 @@ public class Producto {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long codigo;
-    private String categoria;
     private String nombre;
+    private String categoria;
+ 
     private String descripcion;
     private int cantidad;
     private float precio;
@@ -28,15 +31,7 @@ public class Producto {
     public void setCodigo(Long codigo) {
         this.codigo= codigo;
     }
-    
-  /* METODOS SET Y GET PARA EL CAMPO CATEGORIA  */
-    public String getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
- /* METODOS SET Y GET PARA EL CAMPO NOMBRE  */   
+/* METODOS SET Y GET PARA EL CAMPO NOMBRE  */   
     
     public String getNombre() {
         return nombre;
@@ -44,6 +39,14 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+  /* METODOS SET Y GET PARA EL CAMPO CATEGORIA  */
+    public String getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+ 
     
  /* METODOS SET Y GET PARA EL CAMPO DESCRIPCION  */    
     public String getDescripcion() {

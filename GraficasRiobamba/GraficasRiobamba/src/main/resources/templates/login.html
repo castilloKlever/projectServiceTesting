@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>ADMINISTRADOR</title>
-    <link rel="stylesheet" href="css/styleAdmin.css">
+    <link rel="stylesheet" href="/css/styleAdmin.css">
+
 </head>
 <body>
+ 
      <!--Star login -->
   <section class="loging">
          <div class="container">
@@ -15,20 +17,31 @@
                </div>
                <div class="container-formulario">
                       <div class="logo">
-                         <img src="img/img-admin/user.png" alt="">
+                         <img src="/img/img-admin/user.png" alt="">
                       </div>
                       <div class="formulario">
-                            <form action="">
-                                <input  img type="text" name="usuario" placeholder="usuario">
-                                <input type="text" name="contraseña" placeholder="contraseña">
-                                <a href="admin.html">
-                                <input href="admin.html" type="button"  value="Iniciar Sesión" id="boton"  >
-                                </a>
+			                    <div th:if="${param.error}" style="color:black;"  >
+           
+Nombre de usuario y contraseña inválidos.
+        </div>
+        <div th:if="${param.logout}"  style="color:black;" >
+            
+Has sido desconectado.
+        </div>
+					        
+                            <form th:action="@{/GraficasRiobamba/login}" method="post">
+                                <input  type="text" id="username" name="username" placeholder="usuario">
+                                <input type="password" id ="password" name="password" placeholder="contraseña">
+                                    <input type="submit" class="btn" id="boton"  value="Iniciar Sesión"/>
+                          
+                             
                              </form>
-                      </div>
+  </div>
+                      
                </div>
          </div>
   </section>
+
   <!--End Login -->
 </body>
 </html>

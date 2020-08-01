@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>ADMINISTRADOR</title>
-    <link rel="stylesheet" href="css/styleAdmin.css">
-    <link rel="stylesheet" href="css/styleAgregarProducto.css">
+    <link rel="stylesheet" href="/css/styleAdmin.css">
+    <link rel="stylesheet" href="/css/styleAgregarProducto.css">
+    <link rel="stylesheet" href="/css/styleCrud.css">
 </head>
-<body>
-   <!--Start Cantainers-->
 
+<body>
+  <div sec:authorize="isAuthenticated()">
+   <!--Start Cantainers-->
    <section class="Gestion-Empresa">
        <div class="menu">
            <div class="user">
@@ -20,10 +22,10 @@
            <div class="menu-gestion">
                <div class="vista-previa">
                       <div class="icon">
-                          <img src="img/img-admin/boton1.png" alt="">
+                          <img src="/img/img-admin/boton1.png" alt="">
                       </div>
                       <div class="boton">
-                            <a href="index.html" target="_blank">
+                            <a href="/GraficasRiobamba/index" target="_blank">
                              <button id="btn-vista-Previa" class="btn-vista-Previa">Página Web Cliente</button>
                              </a>
                       </div>
@@ -31,7 +33,7 @@
 
                <div class="gestionar-producto">
                       <div class="icon">
-                          <img src="img/img-admin/boton3.png" alt="">
+                          <img src="/img/img-admin/boton3.png" alt="">
                       </div>
                       <div class="boton">
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
@@ -40,26 +42,26 @@
 
                <div class="gestionar-producto">
                       <div class="icon">
-                          <img src="img/img-admin/add1.png" alt="">
+                          <img src="/img/img-admin/add1.png" alt="">
                       </div>
 
                </div>
                 <div class="gestionar-producto">
                       <div class="icon">
-                          <img src="img/img-admin/add2.png" alt="">
+                          <img src="/img/img-admin/add2.png" alt="">
                       </div>
 
                </div>
                 <div class="gestionar-producto">
                       <div class="icon">
-                          <img src="img/img-admin/add3.png" alt="">
+                          <img src="/img/img-admin/add3.png" alt="">
                       </div>
 
                </div>
 
                <div class="gestionar-producto">
                       <div class="icon">
-                          <img src="img/img-admin/add4.png" alt="">
+                          <img src="/img/img-admin/add4.png" alt="">
                       </div>
 
                </div>
@@ -68,25 +70,28 @@
                  <div class="overlay"   id="overlay">
                         <div class="popup" id="popup">
                             <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">
-                            <img src="img/img-admin/close.ico" alt="">
+                            <img src="/img/img-admin/close.ico" alt="">
                             </a>
                             <h3 >Agregra Nuevo Producto</h3>
                             <div class="formulario">
-                            <form action="">
-                                <select name="categorias" id="categorias">
-                                    <option value="colores">colores</option>
-                                     <option value="cuaderno">cuaderno</option>
-                                      <option value="hojas">hojas</option>
+                            <form action="#" th:action="@{/GraficasRiobamba/add}" th:object="${producto}" method="post"    >
+                              <input  placeholder="nombre">
+                                
+                              <select  name="categorias" id="categorias">
+                                    <option value="colores">Utiles Escolares</option>
+                                     <option value="cuaderno">Utiles de Oficina</option>
+                                      <option value="hojas">Papeleria</option>
+                                      <option value="hojas">Libros</option>
+                                       <option value="hojas">Cuadernos</option>
 
                                 </select>
-                                <input  img type="text" name="categoria" id="cat" placeholder="categoría">
-                                <input type="text" name="nombre" placeholder="nombre">
-                                <input type="text" name="descripcion" placeholder="descripción">
+                              <textarea  name="descripcion" placeholder="descripción" ></textarea>
+                           
                                 <input type="text" name="cantidad" placeholder="cantidad">
-                                <input type="text" name="precio" placeholder="precio">
-                                 <input type="text" name="imagen" placeholder="imagen">
+                                <input  type="text" name="precio" placeholder="precio">
+                                 <input  placeholder="imagen">
 
-                                <input href="#" type="button"  value="Agregar Producto" id="boton"  >
+                                <input value="Agregar Producto" id="boton"  >
 
                              </form>
                       </div>
@@ -99,12 +104,17 @@
        <div class="container">
             <div class="container-sesion">
                <div class="sesion">
+                      
                       <div class="boton-sesion">
+                            <div sec:authorize="isAuthenticated()">
+                           <a href="/GraficasRiobamba/logout">
                           <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
-                      </div>
+                         </a>
+ </div>
+                          </div>
                       <div class="container-icon">
                           <div class="icon-sesion">
-                              <img src="img/img-admin/user.png" alt="">
+                              <img src="/img/img-admin/user.png" alt="">
                           </div>
                       </div>
                </div>
@@ -119,7 +129,7 @@
                          </div>
                          <div class="icon-notificacion">
                             <div class="icon">
-                                <img src="img/img-admin/notificacion1.png" id="img1" alt="">
+                                <img src="/img/img-admin/notificacion1.png" id="img1" alt="">
                             </div>
 
                          </div>
@@ -132,7 +142,7 @@
                          </div>
                          <div class="icon-notificacion">
                             <div class="icon">
-                                 <img src="img/img-admin/notificacion2.png" alt="">
+                                 <img src="/img/img-admin/notificacion2.png" alt="">
                             </div>
 
                          </div>
@@ -145,7 +155,7 @@
                          </div>
                          <div class="icon-notificacion ">
                             <div class="icon">
-                                <img src="img/img-admin/notificacion3.png"  class="hovericons" alt="">
+                                <img src="/img/img-admin/notificacion3.png"  class="hovericons" alt="">
                             </div>
 
                          </div>
@@ -160,53 +170,79 @@
                   </div>
                   <div class="container-tabla">
                      <div class="tabla">
-                        <table >
+               <div th:switch="${products}" class="container my-5">
+                   <h2 th:case="null">No recipes yet!</h2>
+                  <div th:case="*">
+                      <table >
+                          <thead>
                            <tr>
-                              <th>Código</th>
-                              <th>Categoría </th>
+
                               <th>Nombre </th>
+                              <th>Categoría </th>
                               <th>Descripción</th>
                               <th>Cantidad</th>
                               <th>Precio</th>
                               <th>Imagen</th>
+                                 <div sec:authorize="isAuthenticated()">
+                                            <th>VER</th>
+                                            <th>EDITAR</th>
+                                            <th>ELIMINAR</th>
+                                 </div>
+
 
                            </tr>
+                        </thead>
 
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
+                        <tbody>
+                                    <tr th:each="producto : ${products}">
+                                        <td th:text="${producto.nombre}"> </td>
+                                        <td th:text="${producto.categoria}"> </td>
+                                        <td th:text="${producto.descripcion}"> </td>
+                                        <td th:text="${producto.cantidad}"> </td>
+                                        <td th:text="${producto.precio}"> </td>
+                                        <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
+                                        <td>
+                                        <!-- STAR MODEL VIEW PRODUCT-->
+                       
+                                         <a  id="btn-view-producto" class="btn-view-producto" > <img src="/img/img-iconCrud/view.png" alt=""></a>
 
-                           </tr>
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
+                                         <div class="modal fade" th:id="modalLong+${producto.codigo}" tabindex="-1" role="dialog" aria-labelledby="detalleProducto" aria-hidden="true">
+  										 	<div class="modal-dialog" role="document">
+  										 	   <!-- STAR POPUD VIEW PRODUCT-->
+                                                <div class="overlay1"   id="overlay1">
+                                                            <div class="popup1" id="popup1">
+                                                                <a href="#" id="btn-cerrar-popup1" class="btn-cerrar-popup1">
+                                                                <img src="/img/img-admin/close.ico" alt="">
+                                                                </a>
+                                                                <h3 >DETALLES DEL PRODUCTO</h3>
+                                                                    <div class="modal-body">
+                                                                        <p th:text="${producto.nombre}"> </p>
+                                                                        <p th:text="${producto.categoria}"> </p>
+                                                                        <p th:text="${producto.descripcion}"> </p>
+                                                                        <p th:text="${producto.cantidad}"> </p>
+                                                                        <p th:text="${producto.precio}"> </p>
+                                               
+                                                                        <p><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="240" class="rounded"></p>
+                                                                        
+                                                                    </div>
+                                                            </div>
+                                                    </div>
+                                                     <!-- END  POPUD VIEW PRODUCT-->
 
-                           </tr>
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
 
 
 
 
+
+  											   </div>
+										 </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
                         </table>
+                  </div>
+
+                  </div>
 
                      </div>
 
@@ -218,6 +254,7 @@
 
        </div>
    </section>
+
 <!--End Cantainers-->
 
 
@@ -226,8 +263,12 @@
 
 
 <!--LINKS JS -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/mainAdmin.js"></script>
-    <script src="js/agregarProducto.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/mainAdmin.js"></script>
+    <script src="/js/agregarProducto.js"></script>
+    <script src="/js/crud.js"></script>
+
+</div>
 </body>
 </html>
+

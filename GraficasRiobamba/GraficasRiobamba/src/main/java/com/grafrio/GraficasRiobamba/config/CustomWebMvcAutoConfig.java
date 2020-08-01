@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @AutoConfigureAfter(DispatcherServletAutoConfiguration.class)
 public class CustomWebMvcAutoConfig implements WebMvcConfigurer {
 
-	@Value ("${upload.path}")
+	@Value("${upload.path}")
 	public String uploadDir;
 	
 	@Override

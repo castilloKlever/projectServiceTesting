@@ -16,15 +16,18 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override 
-	protected void configure(HttpSecurity http) throws Exception {
+	protected void configure( HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers(
 				"/",
-				"/registration",
-				"/js/**",
-				"/css/**",
-				"/img/**",
-				"/webjars/**").permitAll()
+            	"/registration**",
+                "/js/**",
+                "/css/**",
+                "/img/**",
+                "/h2-console/**",
+                "/webjars/**").permitAll()
+				 .and().csrf().ignoringAntMatchers("/h2-console/**")
+		         .and().headers().frameOptions().sameOrigin()
 				.and()
 				.formLogin()
 				.loginPage("/GraficasRiobamba/login")
@@ -34,20 +37,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.logout()
 				.permitAll()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/GraficasRiobamba/logout"))
-				.logoutSuccessUrl("/GraficasRiobamba");
+				.logoutSuccessUrl("/GraficasRiobamba");  
 		}
-	
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) 
-		throws Exception {
-			auth
-			.inMemoryAuthentication()
-			.withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
-		}
+    public void configureGlobal(AuthenticationManagerBuilder auth) 
+      throws Exception {
+        auth
+          .inMemoryAuthentication()
+          .withUser("user").password(passwordEncoder().encode("user")).roles("ADMIN");
+    }
+    
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 	
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-		
-	}
 }

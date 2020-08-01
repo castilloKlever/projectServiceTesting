@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title>GRAFICAS RIOBAMBA </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--LINKS CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/portafolio.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/portafolio.css">
 </head>
 <body>
  <!--Start Header Smart -->
@@ -63,7 +63,7 @@
            <div class="about-content">
              <div class="row">
               <div class="img">
-                 <img src="img/img-nosotros/nosotros.jpg" alt="about-smart" />
+                 <img src="/img/img-nosotros/nosotros.jpg" alt="about-smart" />
                  <div class="texto-encima">
                             <h3>12 Años de Experiencia</h3>
 
@@ -120,7 +120,7 @@
 
                      <div class="imagenService">
                          <div class="imgService">
-                            <a href="https://www.facebook.com/Espacio-Publicitario-1704421609575629" target="_blank"><img src="img/img-service/service.jpg" alt=""> </a>
+                            <a href="https://www.facebook.com/Espacio-Publicitario-1704421609575629" target="_blank"><img src="/img/img-service/service.jpg" alt=""> </a>
                              
  
                          </div>
@@ -152,7 +152,7 @@
 
                      <div class="imagenService">
                          <div class="imgService">
-                             <img src="img/img-service/service1.png" alt="">
+                             <img src="/img/img-service/service1.png" alt="">
 
                          </div>
 
@@ -165,7 +165,7 @@
 
                      <div class="imagenService">
                          <div class="imgService">
-                             <img src="img/img-service/service.png" alt="">
+                             <img src="/img/img-service/service1.png" alt="">
 
                          </div>
 
@@ -203,147 +203,26 @@
 
           </div>
            <!-- estar table -->
-           <div class="container-table">
+           <div class="container-table" th:switch="${products}" th:case="*">
 
 
 
-           <table >
+          <table  >
+                
 
-
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
+                           <tr th:each="producto : ${products}">
+                              <td th:text="${producto.nombre}"> </td>
+                                        <td th:text="${producto.categoria}"> </td>
+                                        <td th:text="${producto.descripcion}"> </td>
+                                        <td th:text="${producto.cantidad}"> </td>
+                                        <td th:text="${producto.precio}"> </td>
+                                        <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
+                                        <td>
 
                            </tr>
 
 
-
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-                           <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-                             <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-
-                            <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-                             <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-                             <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-                             <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
-                             <tr>
-                              <td>3458</td>
-                              <td>Papelera</td>
-                              <td>Cuaderno</td>
-                              <td>100 hojas a cuadros</td>
-                              <td>2</td>
-                              <td>1</td>
-                              <td>Imagen</td>
-
-                           </tr>
-
-
+                         
 
                         </table>
 
@@ -380,7 +259,7 @@
                                <div class="telefonos">
                                   <div class="telefono">
                                      <div class="icon">
-                                         <img src="img/img-icon/telefono.png" alt="">
+                                         <img src="/img/img-icon/telefono.png" alt="">
                                      </div>
 
                                      <div class="text">
@@ -390,7 +269,7 @@
                                   </div>
                                   <div class="correo">
                                        <div class="icon">
-                                         <img src="img/img-icon/email.png" alt="">
+                                         <img src="/img/img-icon/email.png" alt="">
                                        </div>
 
                                      <div class="text">
@@ -399,7 +278,7 @@
                                   </div>
                                   <div class="ubicacion">
                                        <div class="icon">
-                                         <img src="img/img-icon/ubicacion.png" alt="">
+                                         <img src="/img/img-icon/ubicacion.png" alt="">
                                          </div>
                                          <div class="text">
                                          <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D-1.6743%252C-78.6483%26fbclid%3DIwAR1EMhxPC1fwPcGLjx0W_GEsk88mC8likK-JvI4K6KPR0Fm9ltmrp29lmXg&h=AT0UpYK9nTrltiG1MKuyykrFo7tclfVA5FECfGDa4eLh9l9LXFGKJEwfXoMNrixuEwGsaF0dB-Iq5Qp4kh_s8IRxVHPu4OPwze698CYgALzJZc72yalEtaZazd6wB5n6YEYiiw" target="_blank"><pd> Veloz 45-08 entre Av. De la Prensa y Baltazar Paredes</pd></a>
@@ -413,10 +292,10 @@
                                <h5> Tambien en nuestras Redes Sociales  </h5>
                                <div class="contenedor-social">
                                       <div class="icon-social">
-                                          <a title="Facebook" href="https://www.facebook.com/profile.php?id=100009600577991" target="_blank"><img src="img/img-icon/icon2.png" alt="Facebook"></a>
+                                          <a title="Facebook" href="https://www.facebook.com/profile.php?id=100009600577991" target="_blank"><img src="/img/img-icon/icon2.png" alt="Facebook"></a>
                                       </div>
                                       <div class="icon-social">
-                                          <a title="Whatsapp" href="https://api.whatsapp.com/send?phone=593997665258" target="_blank"><img src="img/img-icon/whatsapp.png" alt="Whatsapp"></a>
+                                          <a title="Whatsapp" href="https://api.whatsapp.com/send?phone=593997665258" target="_blank"><img src="/img/img-icon/whatsapp.png" alt="Whatsapp"></a>
                                       </div>
 
 
@@ -457,9 +336,9 @@
    <!-- End footer -->
 
 <!--LINKS JS -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/filter.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/filter.js"></script>
 
 
 
