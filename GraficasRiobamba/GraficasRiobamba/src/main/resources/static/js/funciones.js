@@ -1,6 +1,7 @@
    
+   
 function eliminar(codigo) {
-	console.log(codigo);
+
 	swal({
 		  title: "Esta seguro de Eliminar?",
 		  text: "Una vez eliminado no se prodra restablecer!",
@@ -11,7 +12,7 @@ function eliminar(codigo) {
 		.then((OK) => {
 		  if (OK) {
 			  $.ajax({
-				 url:"/eliminar/"+codigo,
+				 url:"/GraficasRiobamba/eliminar/"+codigo,
 				 success: function(res) {
 					console.log(res);
 				},			
@@ -26,7 +27,5 @@ function eliminar(codigo) {
 		  } 
 		});
 }
-
-
 
 
