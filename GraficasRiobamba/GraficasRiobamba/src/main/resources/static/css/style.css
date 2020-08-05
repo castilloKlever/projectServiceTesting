@@ -104,7 +104,7 @@ background:transparent;
 /*     **********************************************************************************************************************************************                                                   STYLE HEADER SMART
 ***************************************************************************************************************************************++++*/
 .logo, .logo img{ ;
-  margin-top: 10px;
+  margin-top: 5px;
     width: 100px;
    height:  80px;
 }
@@ -170,7 +170,7 @@ header .navbar ul li a.active::before{
 ***************************************************************************************************************************************++++*/
 .home{
     min-height: 100vh;
-    background-image: url(../img/img-fondos/fondo.png);
+    background-image: url(../img/img-fondos/fondo_.png);
     background-size: cover;
     background-position: center;
     padding: 15px;
@@ -223,7 +223,7 @@ header .navbar ul li a.active::before{
 }
 .home .home-content .block h1{
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     margin: 0;
     padding: 0;
