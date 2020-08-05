@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.grafrio.GraficasRiobamba.entities.Mensaje;
 import com.grafrio.GraficasRiobamba.entities.Producto;
+import com.grafrio.GraficasRiobamba.interfaces.ImensajeService;
 import com.grafrio.GraficasRiobamba.interfaces.IproductoService;
 import com.grafrio.GraficasRiobamba.service.PictureService;
 
@@ -32,6 +34,8 @@ public class ProductoControlador {
 	 @Autowired
 	 private IproductoService  service;
 	 @Autowired
+	 private ImensajeService  serviceMensaje ;
+	 @Autowired
 	    PictureService picService;
 	 
 	 @RequestMapping("")
@@ -44,6 +48,14 @@ public class ProductoControlador {
 	     return "login.html";
 	 }
 	 
+	 @GetMapping("/index")
+	 public String ahownIndex(Model model) {
+		 model.addAttribute("mensaje", new Mensaje());
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
+		 return "index";
+	 }
+	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @RequestMapping("/private")
 	 public String Listar(Model model) {
@@ -53,12 +65,15 @@ public class ProductoControlador {
  
 	 }
 	 
-	 @RequestMapping("/index")
-	 public String customers(Model model) {
-		 List<Producto>producto=service.listar();
-		 model.addAttribute("productos", producto);
-	     return "index";
+
+	 
+	 @PostMapping("/saveMensaje")
+	 public String saveMensaje (@Validated Mensaje m, Model model) {
+		 serviceMensaje.save(m);  
+		 return"redirect:/GraficasRiobamba/index";
 	 }
+	 
+	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/new")
 	 public String agregar(Model model) {
@@ -94,16 +109,6 @@ public class ProductoControlador {
 	 
 	 
 	
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/editar/{codigo}")

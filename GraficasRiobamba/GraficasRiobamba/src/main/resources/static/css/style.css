@@ -413,7 +413,7 @@ header .navbar ul li a.active::before{
     color: white;
 }
 .services{
-    background-image: url(../img/img-fondos/service.jpg);
+    background-image: url(../img/img-fondos/fondo.png);
     background-size: cover;
     background-position: center;
     
@@ -505,7 +505,7 @@ header .navbar ul li a.active::before{
     padding: 50px;
 
     text-align: center;
-    z-index: 100;
+
     color: white;
 
 }
@@ -825,7 +825,7 @@ header .navbar ul li a.active::before{
     margin: 10px 0 10px;
 
 }
-.text pd {
+.text p {
     float: left;
      font-size: 15px;
     font-weight: 400;

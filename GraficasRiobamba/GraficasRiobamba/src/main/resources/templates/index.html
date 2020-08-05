@@ -7,6 +7,7 @@
     <!--LINKS CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/portafolio.css">
+    <link rel="stylesheet" href="/css/stylePupu.css">
 </head>
 <body>
  <!--Start Header Smart -->
@@ -181,50 +182,83 @@
   <!--End Service Smart -->
 
 
-<!--Star Portafolio Works Smart -->
+ <!--Star Portafolio Works Smart -->
 
-    <section class="portafolio" id="catalogo">
-       <div class="container">
-          <div class="row">
+        <section class="work contenedor" id="catalogo">
+
              <div class="section-title text-center">
                 <h1>Catálogo de Productos</h1>
 
              </div>
+          
+            <div class="galeria-work" th:switch="${productos}" th:case="*"  >
+                               
+                                    <div class="producto" th:each="producto : ${productos}">
+                                             <div class="categoria">
+                                                 <h1 th:text="${producto.categoria}"> </h1>
+                                             </div>
+                                             
+                                              <div class="img">
+                                                <img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" alt="">
+                                              </div>
+                                              <div class="info">
+                                                  <div class="nombre">
+                                                    
+                                                     <h1 th:text="${producto.nombre}"> </h1>
+                                                  </div>
+                                                  <div class="contenedor-precio">
+                                                      <div class="precio">
+                                                          <h1>PRECIO : $ </h1>
+                                                      </div>
+                                                       <div class="valor">
+                                                            <h1 th:text="${producto.precio}"> </h1>
+                                                       </div>
+                                                     
+                                                  </div>
 
-          </div>
-           <!-- estar table -->
-           <div class="container-table" th:switch="${products}" th:case="*">
+                                                    <div class="contenedor-precio2">
+                                                      <div class="precio">
+                                                          <h1>CANTIDAD: </h1>
+                                                      </div>
+                                                       <div class="valor">
+                                                            <h1 th:text="${producto.cantidad}" > </h1>
+                                                       </div>
+                                                     
+                                                  </div>
+                                                  
+                                                                                                            
+                                                 
 
 
+                                                 
+                                              </div>
+                                              
+                                              <div class="descripcion">
+                                                  <div class="des">
+                                                      <h1>DETALLES DEL PRODUCTO</h1>
+                                                  </div>
+                                                  <div class="parrafo">
+                                                      <p th:text="${producto.descripcion}"    > </p>
+                                                  </div>
+                                                  
+                                              </div>
+                                              
+                                              
+                                            
 
-          <table  >
+                                </div>
+                                                              
+                                                        
+                                
+            
+              
                 
-
-                           <tr th:each="producto : ${productos}">
-                              
-                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" width="300" class="rounded"></td>  
-                                 <td th:text="${producto.nombre}"> </td>
-                                        <td th:text="${producto.categoria}"> </td>
-                                        <td th:text="${producto.descripcion}"> </td>
-                                        <td th:text="${producto.cantidad}"> </td>
-                                        <td th:text="${producto.precio}"> </td>
-                           </tr>
-
-
-                         
-
-                        </table>
-
-                         </div>
-
-          <!-- end table -->
-
-
-
-
-       </div>
-
-    </section>
+              
+            </div>
+  
+        </section>
+        
+        
 
      <!--End Portafolio Works Smart -->
 
@@ -270,7 +304,8 @@
                                          <img src="/img/img-icon/ubicacion.png" alt="">
                                          </div>
                                          <div class="text">
-                                         <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D-1.6743%252C-78.6483%26fbclid%3DIwAR1EMhxPC1fwPcGLjx0W_GEsk88mC8likK-JvI4K6KPR0Fm9ltmrp29lmXg&h=AT0UpYK9nTrltiG1MKuyykrFo7tclfVA5FECfGDa4eLh9l9LXFGKJEwfXoMNrixuEwGsaF0dB-Iq5Qp4kh_s8IRxVHPu4OPwze698CYgALzJZc72yalEtaZazd6wB5n6YEYiiw" target="_blank"><pd> Veloz 45-08 entre Av. De la Prensa y Baltazar Paredes</pd></a>
+                                        <p> Veloz 45-08 entre Av. De la Prensa y Baltazar Paredes </p>
+                                         
                                          </div>
                                   </div>
                                </div>
@@ -299,19 +334,55 @@
 
 
                        <div class="formulario-contact">
+  
 
-                                       <div class="contenedor-mensaje">
-                                                <form action="">
-                                                    <h2 class="text-contactos">Envíanos tu requerimiento.</h2>
-                                                   <input type="text" name="Nombre" placeholder="Nombre">
-                                                   <input type="text" name="Correo" placeholder="Correo">
-                                                   <input type="text" name="telefono" placeholder="Telefono">
-                                                   <textarea name="mensaje"     placeholder="Escriba aqui su mensaje " ></textarea>
-                                                    <input type="button"  value="ENVIAR" id="boton">
+                                          <div class="contenedor-mensaje">
+                                                <form  th:action="@{/GraficasRiobamba/saveMensaje}" th:object="${mensaje}"  method="post">
+                                                   <input th:field="*{nombreCliente}" type="text" name="Nombre" placeholder="Nombre">
+                                                   <input th:field="*{correoCliente}" type="text" name="Correo" placeholder="Correo">
+                                                   <input th:field="*{telefonoCliente}" type="text" name="telefono" placeholder="Telefono">
+                                                   <textarea th:field="*{contenido}"  name="mensaje"     placeholder="Escriba aqui su mensaje " > </textarea>
+                                                 
+																							
+														<div class="overlay"   id="overlay">
+												                        <div class="popup" id="popup">
+												                            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"> </a>
+												                            <h1 >DESEA ENVIAR ESTE MESAJE </h1>
+												                            <h2>GRAFICAS RIOBAMBA ANTENDERA SUS SOLICITUD..</h2>
+                                     
+                                                                                 <div class="cont-botones">
+     <div class="salir" >
+          <a href="/GraficasRiobamba/index"> 
+             <input     value="SALIR" class="botonm" style="cursor: pointer;" >
+          </a>
+     </div>
+     <div class="enviar">
+         <input  type="submit"   value="ENVIAR" class="botonm" style="cursor: pointer;" >
+     </div>
+ </div>
+												                        </div>
+												                 </div>							
+																		
+																		 
+																	
+																		
+																	
+                                                     
                                                 </form>
-                                       </div>
+                                                  <button id="btn-abrir-popup" class="btn-abrir-popup">Enviar Mensaje</button>
+                                                    
+                                                     	
+
+
+
+
+                                       </div> 
 
                        </div>
+
+
+		
+																			
 
                  </div>
 
@@ -326,8 +397,11 @@
 
 <!--LINKS JS -->
     <script src="/js/jquery-3.4.1.min.js"></script>
+
     <script src="/js/main.js"></script>
     <script src="/js/filter.js"></script>
+     <script src="/js/popup.js"></script>
+
 
 
 
