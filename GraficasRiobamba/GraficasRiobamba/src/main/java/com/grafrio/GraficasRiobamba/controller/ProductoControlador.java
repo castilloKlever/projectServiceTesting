@@ -44,12 +44,12 @@ public class ProductoControlador {
 	 }
 	
 	 @RequestMapping("/login")
-	 public String showLogin() {
+	 public String mostrarLogin() {
 	     return "login.html";
 	 }
 	 
 	 @GetMapping("/index")
-	 public String ahownIndex(Model model) {
+	 public String mostrarIndex(Model model) {
 		 model.addAttribute("mensaje", new Mensaje());
 		 List<Producto>producto=service.listar();
 		 model.addAttribute("productos", producto);
@@ -58,29 +58,11 @@ public class ProductoControlador {
 	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @RequestMapping("/private")
-	 public String Listar(Model model) {
+	 public String ListarProducto(Model model) {
 		 List<Producto>producto=service.listar();
 		 model.addAttribute("productos", producto);
 	     return "admin";
  
-	 }
-	 
-
-	 
-	 @PostMapping("/saveMensaje")
-	 public String saveMensaje (@Validated Mensaje m, Model model) {
-		 serviceMensaje.save(m);  
-		 return"redirect:/GraficasRiobamba/index";
-	 }
-	 
-	 
-	 @PreAuthorize("hasAuthority('admin')")
-	 @GetMapping("/new")
-	 public String agregar(Model model) {
-		 List<Producto>producto=service.listar();
-		 model.addAttribute("productos", producto);
-		 model.addAttribute("producto", new Producto());
-		 return "new";
 	 }
 	 
 	 @PreAuthorize("hasAuthority('admin')")
@@ -94,9 +76,27 @@ public class ProductoControlador {
 	 
 	
 	 
+	 @PostMapping("/saveMensaje")
+	 public String guardarMensaje (@Validated Mensaje m, Model model) {
+		 serviceMensaje.save(m);  
+		 return"redirect:/GraficasRiobamba/index";
+	 }
+	 
+	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/new")
+	 public String agregarProducto(Model model) {
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
+		 model.addAttribute("producto", new Producto());
+		 return "new";
+	 }
+	 
+	
+	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @PostMapping("/save")
-	 public String save (@Validated Producto p, Model model, BindingResult result , @RequestParam("file") MultipartFile file) {
+	 public String guardarProducto (@Validated Producto p, Model model, BindingResult result , @RequestParam("file") MultipartFile file) {
 		 if (result.hasErrors()) {
 		        return "new";
 		     }
@@ -112,7 +112,7 @@ public class ProductoControlador {
 	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/editar/{codigo}")
-	 public String editar(@PathVariable Long codigo, Model model) {
+	 public String editarProducto(@PathVariable Long codigo, Model model) {
 		 List<Producto> productos = service.listar();
 		 model.addAttribute("productos",productos);
 		 
@@ -122,7 +122,7 @@ public class ProductoControlador {
 	 }
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/eliminar/{codigo}")
-		public String delete(@PathVariable long codigo,Model model) {
+		public String eliminarProducto(@PathVariable long codigo,Model model) {
 			service.delete(codigo);
 			return "redirect:/GraficasRiobamba/listar";
 		}

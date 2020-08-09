@@ -338,10 +338,10 @@
 
                                           <div class="contenedor-mensaje">
                                                 <form  th:action="@{/GraficasRiobamba/saveMensaje}" th:object="${mensaje}"  method="post">
-                                                   <input th:field="*{nombreCliente}" type="text" name="Nombre" placeholder="Nombre">
-                                                   <input th:field="*{correoCliente}" type="text" name="Correo" placeholder="Correo">
-                                                   <input th:field="*{telefonoCliente}" type="text" name="telefono" placeholder="Telefono">
-                                                   <textarea th:field="*{contenido}"  name="mensaje"     placeholder="Escriba aqui su mensaje " > </textarea>
+                                                   <input th:field="*{nombreCliente}" type="text" name="Nombre" placeholder="Nombre" class="nombre">
+                                                   <input th:field="*{correoCliente}" type="text" name="Correo" placeholder="Correo"  class="cliente">
+                                                   <input th:field="*{telefonoCliente}" type="text" name="telefono" placeholder="Telefono" class="telefono">
+                                                   <textarea th:field="*{contenido}"  name="mensaje"     placeholder="Escriba aqui su mensaje " class="cont" > </textarea>
                                                  
 																							
 														<div class="overlay"   id="overlay">
@@ -369,7 +369,7 @@
 																	
                                                      
                                                 </form>
-                                                  <button id="btn-abrir-popup" class="btn-abrir-popup">Enviar Mensaje</button>
+                                                  <button id="btn-abrir-popup" class="btn-abrir-popup btnAction">Enviar Mensaje</button>
                                                     
                                                      	
 
@@ -400,6 +400,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/filter.js"></script>
+ <script src="/js/Validaciones2.js"></script>
      <script src="/js/popup.js"></script>
 
 
