@@ -26,13 +26,13 @@ Nombre de usuario y contraseña inválidos.
         </div>
         <div th:if="${param.logout}"  style="color:black;" >
             
-Has sido desconectado.
+Cerraste Sesión con Exito!
         </div>
 					        
                             <form th:action="@{/GraficasRiobamba/login}" method="post">
-                                <input  type="text" id="username" name="username" placeholder="usuario">
-                                <input type="password" id ="password" name="password" placeholder="contraseña">
-                                    <input type="submit" class="btn" id="boton"  value="Iniciar Sesión"/>
+                                <input  type="text" id="username" name="username" placeholder="USUARIO">
+                                <input type="password" id ="password" name="password" placeholder="CONTRASEÑA">
+                                    <input type="submit" class="btn" id="boton"  value="INICIAR SESIÓN"/>
                           
                              
                              </form>

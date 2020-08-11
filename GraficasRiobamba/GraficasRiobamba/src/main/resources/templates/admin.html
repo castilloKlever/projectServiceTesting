@@ -41,7 +41,7 @@
                    
 
                </div>
-               <div class="gestionar-producto">
+               <!-- <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add1.png" alt="">
                       </div>
@@ -61,7 +61,7 @@
                           <img src="/img/img-admin/add4.png" alt="">
                       </div>
 
-               </div>
+               </div> -->
            </div>
        </div>
        <div class="container">
@@ -79,7 +79,7 @@
                </div>
             </div>
             <div class="container-master" >
-                  <div class="container-notificaciones">
+                  <!--<div class="container-notificaciones">
                      <div class="notificacion" id="notificacion1">
                          <div class="text-notificacion">
                              <h1>30 </h1>
@@ -114,14 +114,14 @@
                             </div>
                          </div>
                      </div>
-                  </div>
+                  </div>  -->
                   <div class="Titulo-Tabla">
                       <h1>PRODUCTOS REGISTRADOS EN EL SISTEMA </h1>
                   </div>
                   <div class="container-tabla">
                      <div class="tabla">
                <div th:switch="${productos}" class="container my-5">
-                   <h2 th:case="null">No recipes yet!</h2>
+                   <h2 th:case="null">Aún no existen prductos registrados!</h2>
                   <div th:case="*">
                       <table >
                                   <thead>

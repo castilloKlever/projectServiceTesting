@@ -1,4 +1,4 @@
 INSERT INTO productos (nombre, categoria, descripcion,cantidad,precio,foto) VALUES
-  ('Lápiz', 'Útiles Escolares', 'Lorem ipsum dolor sit amet ',24,1, 'd3ff422362544e49902c2e80d4dbcd92'),
-    ('Cuadernos', 'Útiles Escolares', 'Lorem ipsum dolor sit amet ',24,1, 'e54b704f33404ff4b8a3ff7e553cc1dc'),
-   ('Carpetas', 'Útiles de Oficina', 'Lorem ipsum dolor sit amet ',20,3, 'c6e8a8c666e3423b91417feb61b4e40c');
+  ('Jarro', 'Artículos Publicitarios', 'Jarros sublimados, regalos personalizados, publicitarios',2,5, 'f4cf5d8dae1e4359a2be5f32b51da45a'),
+    ('Esferos Publicitario', 'Esferos','Esferos de cualquier color con logotipo',100,0.30, '3fc9dd32d29447b192a70da78f8882e5'),
+   ('Sellos Fechadores', 'Sellos', 'Sellos personalizados automaticos',1,3, '1cde9028b1784b389212579226556c1c');

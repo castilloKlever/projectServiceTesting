@@ -39,7 +39,7 @@
                       </div>
                </div>
 
-               <div class="gestionar-producto">
+               <!-- <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add1.png" alt="">
                       </div>
@@ -63,7 +63,7 @@
                           <img src="/img/img-admin/add4.png" alt="">
                       </div>
 
-               </div>
+               </div> -->
 
 
                  <div class="overlay"   id="overlay">
@@ -71,7 +71,7 @@
                             <a href="/GraficasRiobamba/listar" id="btn-cerrar-popup" class="btn-cerrar-popup">
                             <img src="/img/img-admin/close.ico" alt="">
                             </a>
-                            <h3 >Agregra Nuevo Producto</h3>
+                            <h3 >Agregar Nuevo Producto</h3>
                             <div class="formulario">
                             <form  th:action="@{/GraficasRiobamba/save}" th:object="${producto}" method="post" enctype="multipart/form-data"   >
                                     <div class="ocultar" >
@@ -81,12 +81,10 @@
                               <input th:field="*{nombre}" type="text" class="nombre" >
                                  <h2>Ingrese la categoría del producto</h2>
                               <select th:field="*{categoria}" name="categorias" id="categorias" >
-                                    <option value="Utiles Escolares">Útiles Escolares</option>
-                                     <option value="Útiles de Oficina">Útiles de Oficina</option>
+                                    <option value="Artículos Publicitarios">Artículos Publicitarios</option>
+                                    <option value="Esferos">Esferos</option>
                                       <option value="Papelería">Papelería</option>
-                                      <option value="Libros">Libros</option>
-                                       <option value="Cuadernos">Cuadernos</option>
-
+                                      <option value="Facturas">Facturas</option>
                                 </select>
                                  <h2>Ingrese una descripción del producto</h2>
                               <textarea th:field="*{descripcion}" name="descripcion" class="descripcion"  > </textarea>
@@ -122,7 +120,7 @@
                </div>
             </div>
             <div class="container-master" >
-                  <div class="container-notificaciones">
+                  <!-- <div class="container-notificaciones">
                      <div class="notificacion" id="notificacion1">
                          <div class="text-notificacion">
                              <h1>30 </h1>
@@ -165,7 +163,7 @@
 
                      </div>
 
-                  </div>
+                  </div>-->
 
                   <div class="Titulo-Tabla">
                       <h1>PRODUCTOS REGISTRADOS EN EL SISTEMA </h1>
@@ -199,7 +197,7 @@
                                                 <td th:text="${producto.descripcion}"> </td>
                                                 <td th:text="${producto.cantidad}"> </td>
                                                 <td th:text="${producto.precio}"> </td>
-                                                <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
+                                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
                                                 <!-- START CRUD -->
 <!-- START CRUD -->
   

@@ -413,7 +413,7 @@ header .navbar ul li a.active::before{
     color: white;
 }
 .services{
-    background-image: url(../img/img-fondos/fondo.png);
+    background-image: url(../img/img-fondos/service.jpg);
     background-size: cover;
     background-position: center;
     
