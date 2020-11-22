@@ -129,8 +129,8 @@ public class ProductoControlador {
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/blog")
 	 public String agregarBlog(Model model) {
-		 List<Producto>producto=service.listar();
-		 model.addAttribute("productos", producto);
+		 List<Blog>blog=blogService.listar();
+		 model.addAttribute("blogs", blog);
 		 model.addAttribute("blog", new Blog());
 		 return "blog";
 	 }
@@ -138,8 +138,8 @@ public class ProductoControlador {
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/new_galeria")
 	 public String agregarGaleria(Model model) {
-		 List<Producto>producto=service.listar();
-		 model.addAttribute("productos", producto);
+		 List<Galeria>galeria=galeriaService.listar();
+		 model.addAttribute("galerias", galeria);
 		
 		 model.addAttribute("galeria", new Galeria());
 		 return "new_galeria";
@@ -174,7 +174,7 @@ public class ProductoControlador {
 	     picService.uploadPicture(file, idPic);
 	     g.setFoto(idPic);
 	     galeriaService.save(g);  
-		 return"redirect:/GraficasRiobamba/listar";
+		 return"redirect:/GraficasRiobamba/galeria_creada";
 	 }
 	 
 	 
@@ -188,7 +188,7 @@ public class ProductoControlador {
 	     picService.uploadPicture(file, idPic);
 	     b.setFotoblog(idPic);
 	     blogService.save(b);  
-		 return"redirect:/GraficasRiobamba/listar";
+		 return"redirect:/GraficasRiobamba/blogs_creados";
 	 }
 	 
 	 
@@ -237,7 +237,37 @@ public class ProductoControlador {
 			blogService.delete(codigo);
 			return "redirect:/GraficasRiobamba/blogs_creados";
 		}
-
+     
+	 //CRUD PARA LAS GALERIAS CREADAS 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/galeria_creada")
+	 public String listarGaleria(Model model) {
+		 List<Galeria>galeria=galeriaService.listar();
+		 model.addAttribute("galerias", galeria);
+		
+		 return "galeria_creada";
+	 }
+	
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/editar_galeria/{codigo}")
+	 public String editarGaleria(@PathVariable Long codigo, Model model) {
+		 List<Galeria> galerias = galeriaService.listar();
+		 model.addAttribute("galerias",galerias);
+		 
+		 Optional<Galeria>galeria = galeriaService.listarId(codigo);
+		 model.addAttribute("galeria",galeria);
+		 return("new_galeria");
+	 }
+	 
+	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/eliminar_galeria/{codigo}")
+		public String eliminarGaleria(@PathVariable long codigo,Model model) {
+			galeriaService.delete(codigo);
+			return "redirect:/GraficasRiobamba/galeria_creada";
+		}
+	 
+	
 	 
 	 
 	}

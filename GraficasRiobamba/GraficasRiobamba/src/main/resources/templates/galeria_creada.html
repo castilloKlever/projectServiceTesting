@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>ADMINISTRADOR</title>
     <link rel="stylesheet" href="/css/styleAdmin.css">
-    <link rel="stylesheet" href="/css/styleAgregarProducto.css">
 </head>
 
 <body>
@@ -19,7 +18,9 @@
                </div>
            </div>
            <div class="menu-gestion">
-                 <div class="vista-previa">
+           
+           
+                <div class="vista-previa">
                       <div class="icon">
                           <img src="/img/img-admin/boton1.png" alt="">
                       </div>
@@ -106,62 +107,33 @@
                
                
                
-
+               
+               
+               
+               
+               
+               
                <!-- <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add1.png" alt="">
                       </div>
-
                </div>
                 <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add2.png" alt="">
                       </div>
-
                </div>
                 <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add3.png" alt="">
                       </div>
-
                </div>
-
                <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add4.png" alt="">
                       </div>
 
                </div> -->
-
-
-                 <div class="overlay"   id="overlay">
-                        <div class="popup" id="popup">
-                            <a href="/GraficasRiobamba/listar" id="btn-cerrar-popup" class="btn-cerrar-popup">
-                            <img src="/img/img-admin/close.ico" alt="">
-                            </a>
-                            <h3 >Agregar Nuevo Proyecto a la Galeria </h3>
-                            <div class="formulario">
-                            <form  th:action="@{/GraficasRiobamba/save_galeria}" th:object="${galeria}" method="post" enctype="multipart/form-data"   >
-                                    <div class="ocultar" >
-                                         <input class="ocultar" type="text" th:field="*{codigo}" readonly="readonly" />
-                                    </div>
-                             <h2>Ingrese el título del proyecto</h2>
-                              <input th:field="*{titulo}" type="text" class="titulo" >
-                             
-                                 <h2>Ingrese una descripción del proyecto</h2>
-                              <textarea th:field="*{descripcion}" name="descripcion" class="descripcion"  > </textarea>
-                             
-                                <h2>Carge una imagen  del proyecto</h2>
-                                <input type="file" name="file"  accept="image/*" class="form-control img"/> 
-
-                                <input type="submit" value="Guardar" id="boton"  >
-
-                             </form>
-                      </div>
-
-                        </div>
-                     </div>
-
            </div>
        </div>
        <div class="container">
@@ -170,16 +142,16 @@
                       
                       <div class="boton-sesion">
                             <div sec:authorize="isAuthenticated()">
-                           <a href="/GraficasRiobamba/logout">
-                          <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
-                         </a>
- </div>
+                                   <a href="/GraficasRiobamba/logout">
+                                        <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
+                                 </a>
+                            </div>
                           </div>
                       
                </div>
             </div>
             <div class="container-master" >
-                  <!-- <div class="container-notificaciones">
+                  <!--<div class="container-notificaciones">
                      <div class="notificacion" id="notificacion1">
                          <div class="text-notificacion">
                              <h1>30 </h1>
@@ -190,63 +162,54 @@
                             <div class="icon">
                                 <img src="/img/img-admin/notificacion1.png" id="img1" alt="">
                             </div>
-
                          </div>
                      </div>
                      <div class="notificacion" id="notificacion2" >
                          <div class="text-notificacion">
                              <h1>135 </h1>
                              <h3>Visitantes diarios</h3>
-
                          </div>
                          <div class="icon-notificacion">
                             <div class="icon">
                                  <img src="/img/img-admin/notificacion2.png" alt="">
                             </div>
-
                          </div>
                      </div>
                      <div class="notificacion" id="notificacion3">
                          <div class="text-notificacion">
                              <h1>90 </h1>
                              <h3>Productos Registrados</h3>
-
                          </div>
                          <div class="icon-notificacion ">
                             <div class="icon">
                                 <img src="/img/img-admin/notificacion3.png"  class="hovericons" alt="">
                             </div>
-
                          </div>
-
-
                      </div>
-
-                  </div>-->
-
+                  </div>  -->
                   <div class="Titulo-Tabla">
-                      <h1>LISTA DE PROYECTOS EN GALERIA  </h1>
+                      <h1>LISTA DE PROYECTOS EN GALERIA</h1>
                   </div>
                   <div class="container-tabla">
-                    
-            <div class="tabla">
+                     <div class="tabla">
                <div th:switch="${galerias}" class="container my-5">
-                   <h2 th:case="null">No recipes yet!</h2>
+                   <h2 th:case="null">Aún no existen blogs creados !</h2>
                   <div th:case="*">
                       <table >
                                   <thead>
                                    <tr>
 
-                                       <th>Título del Poryecto</th>
+                                      <th>Título del Poryecto</th>
                                       <th>Descripción del Proyecto </th>
                                       <th>Imagen</th>
                                          <div sec:authorize="isAuthenticated()">
+                                                    
                                                     <th>EDITAR</th>
                                                     <th>ELIMINAR</th>
                                          </div>
                                    </tr>
                                 </thead>
-                               <tbody>
+                                <tbody>
                                             <tr th:each="galeria : ${galerias}">
                                                 <td th:text="${galeria.titulo}"> </td>
                                                 <td th:text="${galeria.descripcion}"> </td>
@@ -297,21 +260,18 @@
 
                   </div>
 
-
-
             </div>
 
        </div>
    </section>
 
-<!--End Cantainers-->
 
-
-  <!--End section profile-->
-
- <script src="/js/jquery-3.4.1.min.js"></script>
-
-    <script src="/js/Validaciones.js"></script>
 </div>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="/js/eliminargaleria.js"> </script>
 </body>
 </html>

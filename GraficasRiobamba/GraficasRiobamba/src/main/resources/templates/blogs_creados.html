@@ -18,7 +18,7 @@
                </div>
            </div>
            <div class="menu-gestion">
-               <div class="vista-previa">
+                <div class="vista-previa">
                       <div class="icon">
                           <img src="/img/img-admin/boton1.png" alt="">
                       </div>
@@ -28,6 +28,7 @@
                              </a>
                       </div>
                </div>
+               
                <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
@@ -38,12 +39,8 @@
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
                             </a>
                       </div>
-                      
-                    
-                   
-
+            
                </div>
-               
                   <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
@@ -55,58 +52,23 @@
                             </a>
                       </div>
 
-                      
+                    </div>
                     
-                   
-
-          
-               
-               
-               
-               
-               
-               
-               
-               
-                  
-                  <div class="gestionar-producto">
+                          <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
                       </div>
-                   
+                  
                       <div class="boton">
                              <a href="/GraficasRiobamba/blog" >
-                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Un blog</button>
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Crear Un blog</button>
                             </a>
                       </div>
 
-                      
-                    
-                   
 
                </div>
-               
-                    </div>
-               
-                
-                  <div class="gestionar-producto">
-                      <div class="icon">
-                         
-                      </div>
-                   
-                      <div class="boton">
-                            
-                      </div>
-
-                      
-                    
-                   
-
-               </div>
-               
-               
-               
-                   
+   
+  
                   <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
@@ -117,11 +79,7 @@
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Blogs Creados </button>
                             </a>
                       </div>
-
-                      
-                    
-                   
-
+      
                </div>
                
                       <div class="gestionar-producto">
@@ -142,8 +100,6 @@
                </div>
                
                                 
-               
-               
                
                
                
@@ -269,7 +225,7 @@
 
 
 
-                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/_blog/}+${blog.codigo}" -->
+                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/eliminar_blog/}+${blog.codigo}" -->
                                                                        <td>
 																		<a th:onclick="eliminar([[${blog.codigo}]])" href="#">
 																		  <img src="/img/img-admin/delete.png" alt="">
@@ -309,6 +265,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="/js/funciones.js"> </script>
+	<script src="/js/eliminarblog.js"> </script>
 </body>
 </html>

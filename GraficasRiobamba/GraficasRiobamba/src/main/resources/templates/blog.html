@@ -19,7 +19,7 @@
                </div>
            </div>
            <div class="menu-gestion">
-               <div class="vista-previa">
+                <div class="vista-previa">
                       <div class="icon">
                           <img src="/img/img-admin/boton1.png" alt="">
                       </div>
@@ -29,27 +29,68 @@
                              </a>
                       </div>
                </div>
-
+               
                <div class="gestionar-producto">
-                      <div class="icon">
-                          <img src="/img/img-admin/boton3.png" alt="">
-                      </div>
-                      <div class="boton">
-                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
-                      </div>
-                      
-                     
-               </div>
-               
-               
-                     <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
                       </div>
                    
                       <div class="boton">
                              <a href="/GraficasRiobamba/new" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
+                            </a>
+                      </div>
+            
+               </div>
+                  <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/new_galeria" >
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Proyecto Galeria</button>
+                            </a>
+                      </div>
+
+                    </div>
+                    
+                          <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                  
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/blog" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Crear Un blog</button>
+                            </a>
+                      </div>
+
+
+               </div>
+   
+  
+                  <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/blogs_creados" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Blogs Creados </button>
+                            </a>
+                      </div>
+      
+               </div>
+               
+                      <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/galeria_creada" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Galeria de Poryectos </button>
                             </a>
                       </div>
 
@@ -58,6 +99,10 @@
                    
 
                </div>
+               
+                                
+               
+               
                
 
                <!-- <div class="gestionar-producto">
@@ -179,23 +224,21 @@
                   </div>-->
 
                   <div class="Titulo-Tabla">
-                      <h1>PRODUCTOS REGISTRADOS EN EL SISTEMA </h1>
+                      <h1>LISTA DE BLOGS CREADOS </h1>
                   </div>
                   <div class="container-tabla">
                     
             <div class="tabla">
-               <div th:switch="${productos}" class="container my-5">
+               <div th:switch="${blogs}" class="container my-5">
                    <h2 th:case="null">No recipes yet!</h2>
                   <div th:case="*">
                       <table >
                                   <thead>
                                    <tr>
 
-                                      <th>Nombre </th>
-                                      <th>Categoría </th>
-                                      <th>Descripción</th>
-                                      <th>Cantidad</th>
-                                      <th>Precio</th>
+                                      <th>Título del Blog</th>
+                                      <th>Descripción del Blog </th>
+                                      <th>Fecha de Publicación</th>
                                       <th>Imagen</th>
                                          <div sec:authorize="isAuthenticated()">
                                                     <th>EDITAR</th>
@@ -204,20 +247,18 @@
                                    </tr>
                                 </thead>
                                 <tbody>
-                                            <tr th:each="producto : ${productos}">
-                                                <td th:text="${producto.nombre}"> </td>
-                                                <td th:text="${producto.categoria}"> </td>
-                                                <td th:text="${producto.descripcion}"> </td>
-                                                <td th:text="${producto.cantidad}"> </td>
-                                                <td th:text="${producto.precio}"> </td>
-                                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
-                                                <!-- START CRUD -->
-<!-- START CRUD -->
+                                            <tr th:each="blog : ${blogs}">
+                                                <td th:text="${blog.tituloblog}"> </td>
+                                                <td th:text="${blog.descripcionblog}"> </td>
+                                                <td th:text="${blog.fechablog}"> </td>
+                                           
+                                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${blog.fotoblog}+.jpg)}" width="80" class="rounded"></td>
+                                                 <!-- START CRUD -->
   
                                                               <!-- START UPDATE-->
                                                                       <td>
                                                                           
-                                                                          <a th:href="@{/GraficasRiobamba/editar/}+${producto.codigo}">
+                                                                          <a th:href="@{/GraficasRiobamba/editar_blog/}+${blog.codigo}">
                                                                               <img src="/img/img-admin/update.png" alt="">
                                                                               
                                                                           </a>
@@ -228,9 +269,9 @@
 
 
 
-                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/eliminar/}+${producto.codigo}" -->
+                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/eliminar_blog/}+${blog.codigo}" -->
                                                                        <td>
-																		<a th:onclick="eliminar([[${producto.codigo}]])" href="#">
+																		<a th:onclick="eliminar([[${blog.codigo}]])" href="#">
 																		  <img src="/img/img-admin/delete.png" alt="">
 																		
 																		</a>
@@ -240,6 +281,10 @@
                                                               <!-- END DELETE-->
                                                             
                                                               <!-- START CRUD -->
+  
+
+                                                                <!-- END CRUD -->
+
 
                                                 <!-- END CRUD -->
 
