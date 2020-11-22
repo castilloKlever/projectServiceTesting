@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMINISTRADOR</title>
+    <link rel="stylesheet" href="/css/styleAdmin.css">
+</head>
+
+<body>
+  <div sec:authorize="isAuthenticated()">
+   <!--Start Cantainers-->
+   <section class="Gestion-Empresa">
+       <div class="menu">
+           <div class="user">
+                <div class="titulo-user">
+                   <h1>Graficas Riobamba </h1>
+                   <h3>Administrador</h3>
+               </div>
+           </div>
+           <div class="menu-gestion">
+               <div class="vista-previa">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton1.png" alt="">
+                      </div>
+                      <div class="boton">
+                            <a href="/GraficasRiobamba/index" target="_blank">
+                             <button id="btn-vista-Previa" class="btn-vista-Previa">Página Web Cliente</button>
+                             </a>
+                      </div>
+               </div>
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/new" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
+                            </a>
+                      </div>
+                      
+                    
+                   
+
+               </div>
+               
+                  <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/new_galeria" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Proyecto Galeria</button>
+                            </a>
+                      </div>
+
+                      
+                    
+                   
+
+          
+               
+               
+               
+               
+               
+               
+               
+               
+                  
+                  <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/blog" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Un blog</button>
+                            </a>
+                      </div>
+
+                      
+                    
+                   
+
+               </div>
+               
+                    </div>
+               
+                
+                  <div class="gestionar-producto">
+                      <div class="icon">
+                         
+                      </div>
+                   
+                      <div class="boton">
+                            
+                      </div>
+
+                      
+                    
+                   
+
+               </div>
+               
+               
+               
+                   
+                  <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/blogs_creados" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Blogs Creados </button>
+                            </a>
+                      </div>
+
+                      
+                    
+                   
+
+               </div>
+               
+                      <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/galeria_creada" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Galeria de Poryectos </button>
+                            </a>
+                      </div>
+
+                      
+                    
+                   
+
+               </div>
+               
+                                
+               
+               
+               
+               
+               
+               
+               
+               <!-- <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add1.png" alt="">
+                      </div>
+               </div>
+                <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add2.png" alt="">
+                      </div>
+               </div>
+                <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add3.png" alt="">
+                      </div>
+               </div>
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add4.png" alt="">
+                      </div>
+
+               </div> -->
+           </div>
+       </div>
+       <div class="container">
+            <div class="container-sesion">
+               <div class="sesion">
+                      
+                      <div class="boton-sesion">
+                            <div sec:authorize="isAuthenticated()">
+                                   <a href="/GraficasRiobamba/logout">
+                                        <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
+                                 </a>
+                            </div>
+                          </div>
+                      
+               </div>
+            </div>
+            <div class="container-master" >
+                  <!--<div class="container-notificaciones">
+                     <div class="notificacion" id="notificacion1">
+                         <div class="text-notificacion">
+                             <h1>30 </h1>
+                             <h3>Nuevos mensajes</h3>
+
+                         </div>
+                         <div class="icon-notificacion">
+                            <div class="icon">
+                                <img src="/img/img-admin/notificacion1.png" id="img1" alt="">
+                            </div>
+                         </div>
+                     </div>
+                     <div class="notificacion" id="notificacion2" >
+                         <div class="text-notificacion">
+                             <h1>135 </h1>
+                             <h3>Visitantes diarios</h3>
+                         </div>
+                         <div class="icon-notificacion">
+                            <div class="icon">
+                                 <img src="/img/img-admin/notificacion2.png" alt="">
+                            </div>
+                         </div>
+                     </div>
+                     <div class="notificacion" id="notificacion3">
+                         <div class="text-notificacion">
+                             <h1>90 </h1>
+                             <h3>Productos Registrados</h3>
+                         </div>
+                         <div class="icon-notificacion ">
+                            <div class="icon">
+                                <img src="/img/img-admin/notificacion3.png"  class="hovericons" alt="">
+                            </div>
+                         </div>
+                     </div>
+                  </div>  -->
+                  <div class="Titulo-Tabla">
+                      <h1>LISTA DE BLOGS CREADOS</h1>
+                  </div>
+                  <div class="container-tabla">
+                     <div class="tabla">
+               <div th:switch="${blogs}" class="container my-5">
+                   <h2 th:case="null">Aún no existen blogs creados !</h2>
+                  <div th:case="*">
+                      <table >
+                                  <thead>
+                                   <tr>
+
+                                      <th>Título del Blog</th>
+                                      <th>Descripción del Blog </th>
+                                      <th>Fecha de Publicación</th>
+                                      <th>Imagen</th>
+                                         <div sec:authorize="isAuthenticated()">
+                                                    
+                                                    <th>EDITAR</th>
+                                                    <th>ELIMINAR</th>
+                                         </div>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                            <tr th:each="blog : ${blogs}">
+                                                <td th:text="${blog.tituloblog}"> </td>
+                                                <td th:text="${blog.descripcionblog}"> </td>
+                                                <td th:text="${blog.fechablog}"> </td>
+                                           
+                                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${blog.fotoblog}+.jpg)}" width="80" class="rounded"></td>
+                                                 <!-- START CRUD -->
+  
+                                                              <!-- START UPDATE-->
+                                                                      <td>
+                                                                          
+                                                                          <a th:href="@{/GraficasRiobamba/editar_blog/}+${blog.codigo}">
+                                                                              <img src="/img/img-admin/update.png" alt="">
+                                                                              
+                                                                          </a>
+                                                                          
+                                                                      </td>
+
+                                                              <!-- END UPDATE-->
+
+
+
+                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/_blog/}+${blog.codigo}" -->
+                                                                       <td>
+																		<a th:onclick="eliminar([[${blog.codigo}]])" href="#">
+																		  <img src="/img/img-admin/delete.png" alt="">
+																		
+																		</a>
+																		
+																		</td>
+
+                                                              <!-- END DELETE-->
+                                                            
+                                                              <!-- START CRUD -->
+  
+
+                                                                <!-- END CRUD -->
+
+
+                                                <!-- END CRUD -->
+
+                                            </tr>
+                                </tbody>
+                        </table>
+                  </div>
+                  </div>
+                     </div>
+
+                  </div>
+
+            </div>
+
+       </div>
+   </section>
+
+
+</div>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="/js/funciones.js"> </script>
+</body>
+</html>

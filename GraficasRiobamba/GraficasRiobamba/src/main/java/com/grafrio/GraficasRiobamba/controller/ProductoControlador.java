@@ -18,8 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.grafrio.GraficasRiobamba.entities.Blog;
+import com.grafrio.GraficasRiobamba.entities.Galeria;
 import com.grafrio.GraficasRiobamba.entities.Mensaje;
 import com.grafrio.GraficasRiobamba.entities.Producto;
+import com.grafrio.GraficasRiobamba.interfaces.IblogService;
+import com.grafrio.GraficasRiobamba.interfaces.IgaleriaService;
 import com.grafrio.GraficasRiobamba.interfaces.ImensajeService;
 import com.grafrio.GraficasRiobamba.interfaces.IproductoService;
 import com.grafrio.GraficasRiobamba.service.PictureService;
@@ -36,6 +40,11 @@ public class ProductoControlador {
 	 @Autowired
 	 private ImensajeService  serviceMensaje ;
 	 @Autowired
+	 private IgaleriaService galeriaService;
+	 @Autowired
+	 private IblogService blogService;
+	 
+	 @Autowired
 	    PictureService picService;
 	 
 	 @RequestMapping("")
@@ -50,12 +59,37 @@ public class ProductoControlador {
 	 
 	 @GetMapping("/index")
 	 public String mostrarIndex(Model model) {
+		 List<Blog>blog=blogService.listar();
+		 model.addAttribute("blogs", blog);
+		 return "index";
+	 }
+	 @GetMapping("/about")
+	 public String mostrarAbout(Model model) {
+		 return "about";
+	 }
+	 
+	 @GetMapping("/portafolio")
+	 public String mostrarPortafolio(Model model) {
 		 model.addAttribute("mensaje", new Mensaje());
 		 List<Producto>producto=service.listar();
 		 model.addAttribute("productos", producto);
-		 return "index";
+		 return "portafolio";
 	 }
 	 
+	 
+	 @GetMapping("/gallery")
+	 public String mostrarGaleria(Model model) {
+		
+		 List<Galeria>galeria=galeriaService.listar();
+		 model.addAttribute("galerias", galeria);
+		 return "gallery";
+	 }
+	 
+	 
+	 @GetMapping("/mail")
+	 public String mostrarContactos(Model model) {
+		 return "mail";
+	 }
 	 @PreAuthorize("hasAuthority('admin')")
 	 @RequestMapping("/private")
 	 public String ListarProducto(Model model) {
@@ -92,6 +126,27 @@ public class ProductoControlador {
 		 return "new";
 	 }
 	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/blog")
+	 public String agregarBlog(Model model) {
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
+		 model.addAttribute("blog", new Blog());
+		 return "blog";
+	 }
+	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/new_galeria")
+	 public String agregarGaleria(Model model) {
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
+		
+		 model.addAttribute("galeria", new Galeria());
+		 return "new_galeria";
+	 }
+	 
+	
+	
 	
 	 
 	 @PreAuthorize("hasAuthority('admin')")
@@ -108,8 +163,37 @@ public class ProductoControlador {
 	 }
 	 
 	 
-	
+
+	 @PreAuthorize("hasAuthority('admin')")
+	 @PostMapping("/save_galeria")
+	 public String guardarGaleria (@Validated Galeria g, Model model, BindingResult result , @RequestParam("file") MultipartFile file) {
+		 if (result.hasErrors()) {
+		        return "new_galeria";
+		     }
+		 UUID idPic = UUID.randomUUID();
+	     picService.uploadPicture(file, idPic);
+	     g.setFoto(idPic);
+	     galeriaService.save(g);  
+		 return"redirect:/GraficasRiobamba/listar";
+	 }
 	 
+	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @PostMapping("/save_blog")
+	 public String guardarBlog(@Validated Blog b, Model model, BindingResult result , @RequestParam("file") MultipartFile file) {
+		 if (result.hasErrors()) {
+		        return "blog";
+		     }
+		 UUID idPic = UUID.randomUUID();
+	     picService.uploadPicture(file, idPic);
+	     b.setFotoblog(idPic);
+	     blogService.save(b);  
+		 return"redirect:/GraficasRiobamba/listar";
+	 }
+	 
+	 
+	 
+
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/editar/{codigo}")
 	 public String editarProducto(@PathVariable Long codigo, Model model) {
@@ -127,6 +211,35 @@ public class ProductoControlador {
 			return "redirect:/GraficasRiobamba/listar";
 		}
 	
+	//CRUD PARA LOS BLOGS CREADOS 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/blogs_creados")
+	 public String alostarBlog(Model model) {
+		 List<Blog>blog=blogService.listar();
+		 model.addAttribute("blogs", blog);
+		
+		 return "blogs_creados";
+	 }
+	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/editar_blog/{codigo}")
+	 public String editarBlog(@PathVariable Long codigo, Model model) {
+		 List<Blog> blogs = blogService.listar();
+		 model.addAttribute("blogs",blogs);
+		 
+		 Optional<Blog>blog = blogService.listarId(codigo);
+		 model.addAttribute("blog",blog);
+		 return("blog");
+	 }
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/eliminar_blog/{codigo}")
+		public String eliminarBlog(@PathVariable long codigo,Model model) {
+			blogService.delete(codigo);
+			return "redirect:/GraficasRiobamba/blogs_creados";
+		}
+
+	 
+	 
 	}
 	
 		

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMINISTRADOR</title>
+    <link rel="stylesheet" href="/css/styleAdmin.css">
+    <link rel="stylesheet" href="/css/styleAgregarProducto.css">
+</head>
+
+<body>
+  <div sec:authorize="isAuthenticated()">
+   <!--Start Cantainers-->
+   <section class="Gestion-Empresa">
+       <div class="menu">
+           <div class="user">
+                <div class="titulo-user">
+                   <h1>Graficas Riobamba </h1>
+                   <h3>Administrador</h3>
+               </div>
+           </div>
+           <div class="menu-gestion">
+               <div class="vista-previa">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton1.png" alt="">
+                      </div>
+                      <div class="boton">
+                            <a href="/GraficasRiobamba/index" target="_blank">
+                             <button id="btn-vista-Previa" class="btn-vista-Previa">Página Web Cliente</button>
+                             </a>
+                      </div>
+               </div>
+
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                      <div class="boton">
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
+                      </div>
+               </div>
+               
+                     <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/new" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Proyecto Galeria</button>
+                            </a>
+                      </div>
+
+                      
+                    
+                   
+
+               </div>
+               
+               
+                   <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/boton3.png" alt="">
+                      </div>
+                   
+                      <div class="boton">
+                             <a href="/GraficasRiobamba/blog" >
+                            <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Un blog</button>
+                            </a>
+                      </div>
+
+                      
+                    
+                   
+
+               </div>
+               
+               
+
+               <!-- <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add1.png" alt="">
+                      </div>
+
+               </div>
+                <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add2.png" alt="">
+                      </div>
+
+               </div>
+                <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add3.png" alt="">
+                      </div>
+
+               </div>
+
+               <div class="gestionar-producto">
+                      <div class="icon">
+                          <img src="/img/img-admin/add4.png" alt="">
+                      </div>
+
+               </div> -->
+
+
+                 <div class="overlay"   id="overlay">
+                        <div class="popup" id="popup">
+                            <a href="/GraficasRiobamba/listar" id="btn-cerrar-popup" class="btn-cerrar-popup">
+                            <img src="/img/img-admin/close.ico" alt="">
+                            </a>
+                            <h3 >Agregar Nuevo Proyecto a la Galeria </h3>
+                            <div class="formulario">
+                            <form  th:action="@{/GraficasRiobamba/save_galeria}" th:object="${galeria}" method="post" enctype="multipart/form-data"   >
+                                    <div class="ocultar" >
+                                         <input class="ocultar" type="text" th:field="*{codigo}" readonly="readonly" />
+                                    </div>
+                             <h2>Ingrese el título del proyecto</h2>
+                              <input th:field="*{titulo}" type="text" class="titulo" >
+                             
+                                 <h2>Ingrese una descripción del proyecto</h2>
+                              <textarea th:field="*{descripcion}" name="descripcion" class="descripcion"  > </textarea>
+                             
+                                <h2>Carge una imagen  del proyecto</h2>
+                                <input type="file" name="file"  accept="image/*" class="form-control img"/> 
+
+                                <input type="submit" value="Guardar" id="boton"  >
+
+                             </form>
+                      </div>
+
+                        </div>
+                     </div>
+
+           </div>
+       </div>
+       <div class="container">
+            <div class="container-sesion">
+               <div class="sesion">
+                      
+                      <div class="boton-sesion">
+                            <div sec:authorize="isAuthenticated()">
+                           <a href="/GraficasRiobamba/logout">
+                          <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
+                         </a>
+ </div>
+                          </div>
+                      
+               </div>
+            </div>
+            <div class="container-master" >
+                  <!-- <div class="container-notificaciones">
+                     <div class="notificacion" id="notificacion1">
+                         <div class="text-notificacion">
+                             <h1>30 </h1>
+                             <h3>Nuevos mensajes</h3>
+
+                         </div>
+                         <div class="icon-notificacion">
+                            <div class="icon">
+                                <img src="/img/img-admin/notificacion1.png" id="img1" alt="">
+                            </div>
+
+                         </div>
+                     </div>
+                     <div class="notificacion" id="notificacion2" >
+                         <div class="text-notificacion">
+                             <h1>135 </h1>
+                             <h3>Visitantes diarios</h3>
+
+                         </div>
+                         <div class="icon-notificacion">
+                            <div class="icon">
+                                 <img src="/img/img-admin/notificacion2.png" alt="">
+                            </div>
+
+                         </div>
+                     </div>
+                     <div class="notificacion" id="notificacion3">
+                         <div class="text-notificacion">
+                             <h1>90 </h1>
+                             <h3>Productos Registrados</h3>
+
+                         </div>
+                         <div class="icon-notificacion ">
+                            <div class="icon">
+                                <img src="/img/img-admin/notificacion3.png"  class="hovericons" alt="">
+                            </div>
+
+                         </div>
+
+
+                     </div>
+
+                  </div>-->
+
+                  <div class="Titulo-Tabla">
+                      <h1>PRODUCTOS REGISTRADOS EN EL SISTEMA </h1>
+                  </div>
+                  <div class="container-tabla">
+                    
+            <div class="tabla">
+               <div th:switch="${productos}" class="container my-5">
+                   <h2 th:case="null">No recipes yet!</h2>
+                  <div th:case="*">
+                      <table >
+                                  <thead>
+                                   <tr>
+
+                                      <th>Nombre </th>
+                                      <th>Categoría </th>
+                                      <th>Descripción</th>
+                                      <th>Cantidad</th>
+                                      <th>Precio</th>
+                                      <th>Imagen</th>
+                                         <div sec:authorize="isAuthenticated()">
+                                                    <th>EDITAR</th>
+                                                    <th>ELIMINAR</th>
+                                         </div>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                            <tr th:each="producto : ${productos}">
+                                                <td th:text="${producto.nombre}"> </td>
+                                                <td th:text="${producto.categoria}"> </td>
+                                                <td th:text="${producto.descripcion}"> </td>
+                                                <td th:text="${producto.cantidad}"> </td>
+                                                <td th:text="${producto.precio}"> </td>
+                                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
+                                                <!-- START CRUD -->
+<!-- START CRUD -->
+  
+                                                              <!-- START UPDATE-->
+                                                                      <td>
+                                                                          
+                                                                          <a th:href="@{/GraficasRiobamba/editar/}+${producto.codigo}">
+                                                                              <img src="/img/img-admin/update.png" alt="">
+                                                                              
+                                                                          </a>
+                                                                          
+                                                                      </td>
+
+                                                              <!-- END UPDATE-->
+
+
+
+                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/eliminar/}+${producto.codigo}" -->
+                                                                       <td>
+																		<a th:onclick="eliminar([[${producto.codigo}]])" href="#">
+																		  <img src="/img/img-admin/delete.png" alt="">
+																		
+																		</a>
+																		
+																		</td>
+
+                                                              <!-- END DELETE-->
+                                                            
+                                                              <!-- START CRUD -->
+
+                                                <!-- END CRUD -->
+
+                                            </tr>
+                                </tbody>
+                        </table>
+                  </div>
+                  </div>
+                     </div>
+
+                  </div>
+
+
+
+            </div>
+
+       </div>
+   </section>
+
+<!--End Cantainers-->
+
+
+  <!--End section profile-->
+
+ <script src="/js/jquery-3.4.1.min.js"></script>
+
+    <script src="/js/Validaciones.js"></script>
+</div>
+</body>
+</html>

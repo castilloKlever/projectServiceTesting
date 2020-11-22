@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Gráficas Riobamba</title>
+<title>Graficas Riobamba| Galería</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Farming Company Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -14,12 +14,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- css -->
 <link rel="stylesheet" href="/css/stylecliente.css" type="text/css" media="all" />
 <!--// css -->
+<link rel="stylesheet" href="/css/lightbox.css">
 <!-- font-awesome icons -->
 <link href="/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
-
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Righteous&subset=latin-ext" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
 <script src="/js/jquery-1.11.1.min.js"></script>
-<script src="/css/js/bootstrap.js"></script>
+<script src="/js/bootstrap.js"></script>
 <script src="/js/SmoothScroll.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -31,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 </head>
 <body>
-	<!-- header -->
+		<!-- header -->
 	<div class="header">
 		<div class="container">
 			<nav class="navbar navbar-default">
@@ -70,148 +74,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //header -->
 	<!-- banner -->
-	<div class="banner">
+	<div class="banner about-banner">
 		<div class="container">
-			<section class="slider">
-					<div class="flexslider">
-						<ul class="slides">
-							<li>	
-								<div class="banner_text">
-									<h3>Imprensiones de Folletos, Cuadernos, Lapiceros</h3>
-									<div class="w3ls-line"> </div>
-									<p>Gráficas Riobamba</p>
-									<div class="w3-button">
-										<a href="single.html" class="btn btn-1 btn-1b">Leer Más</a>
-									</div>
-								</div>
-							</li>
-							<li>	
-								<div class="banner_text">
-									<h3>Imprenta en Genaral</h3>
-									<div class="w3ls-line"> </div>
-									<p>Gráficas Riobamba</p>
-									<div class="w3-button">
-										<a href="single.html" class="btn btn-1 btn-1b">Leer Más</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-			</section>
-			<!-- flexSlider -->
-			<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
-			<script defer src="js/jquery.flexslider.js"></script>
-			<script type="text/javascript">
-				$(window).load(function(){
-					$('.flexslider').flexslider({
-						animation: "slide",
-						start: function(slider){
-						$('body').removeClass('loading');
-						}
-					});
-				});
-			</script>
-			<!-- //flexSlider -->
+			<h2>Our Gallery</h2>
+			<div class="agileits-line"> </div>
 		</div>
 	</div>
 	<!-- //banner -->
-	<!-- services -->
-	<div class="services">
+	<!-- gallery -->
+	<div class="gallery">
 		<div class="container">
-			<div class="services-main">
-				<div class="services-heading">
-					<h2>Nuestros Servicios</h2>
-					<div class="agileits-line"> </div>
-				</div>
-				<div class="services-bottom">
-					<div class="services-grid">
-						<div class="col-md-6 services-grid-left">
-							<div class="services-icon"><i class="fa fa-envira" aria-hidden="true"></i></div> 
-							<div class="services-text">
-								<h4>ESPACIO PUBLICITARIO</h4>
-								<p>Un medio de comunicación en donde usted puede publicar los nuevos productos, las ofertas, los servicios y promociones que ofrece su negocio.</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="col-md-6 services-grid-right">
-							<img src="/images/3.jpg" width="200 px" />
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="services-grid">					
-						<div class="col-md-6 services-grid-right ulta-grid">
-							<img src="/images/4.jpg" width="200 px"/>
-						</div>
-						<div class="col-md-6 services-grid-left ulta-grid">
-							<div class="services-icon"><i class="fa fa-magnet" aria-hidden="true"></i></div> 
-							<div class="services-text">
-								<h4>ARTÍCULOS PUBLICITARIOS</h4>
-								<p>Sublime todo tipo de superfícies e imprima en articulos de tela, todo lo que necesite para publicitar su evento.</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="services-grid">
-						<div class="col-md-6 services-grid-left">
-							<div class="services-icon"><i class="fa fa-cog" aria-hidden="true"></i></div> 
-							<div class="services-text">
-								<h4>SELLOS</h4>
-								<p>Su sello en cualquier tamaño y de todo tipo como: automaticos, fechadores, de bolsillo, secos. En materiales de madera y plástico</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="col-md-6 services-grid-right">
-							<img src="/images/6.jpg" width="200 px" />
-						</div>
-						<div class="clearfix"> </div>
+			<div class="gallery-grids"  th:switch="${galerias}" th:case="*">
+				<div class="col-md-4 gallery-grid"  th:each="galeria : ${galerias}" >
+					<div class="grid">
+						<figure class="effect-roxy">
+							<a class="example-image-link" href="@{/GraficasRiobamba/pic/{id}(id=${galeria.foto}+.jpg)}" data-lightbox="example-set" data-title="In lacinia pharetra ipsum vel dapibus. Ut vitae tristique nisi, mattis pellentesque elit. Proin mollis sed nisi ac sodales.">
+								<img th:src="@{/GraficasRiobamba/pic/{id}(id=${galeria.foto}+.jpg)}" />
+								<figcaption>
+									<h3  th:text="${galeria.titulo}"      ></h3>
+									<p th:text="${galeria.descripcion}" > </p>
+								</figcaption>	
+							</a>
+						</figure>
 					</div>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!--services -->
-	<!-- services-bottom -->
-	<div class="text-grid">
-		<div class="container">
-			<h4>¡Imprimimos tus ideas!</h4>
-			<p>Pellentesque non nibh ante. Cras hendrerit finibus eros eget elementum. Maecenas sed ultrices dui. Fusce id feugiat arcu. Vivamus sodales mauris sagittis sem tincidunt, vel pretium orci viverra. Nunc pretium, eros id aliquam cursus, tellus nisi gravida sapien, et eleifend ipsum erat eget nisl.</p>
-		</div>
-	</div>
-	<!-- //services-bottom -->
-	<!-- blog -->
-	<div class="blog">
-		<div class="container">
-			<div class="services-heading">
-				<h3>Nuestro Blog</h3>
-				<div class="agileits-line"> </div>
-			</div>
-			<div class="agileinfo-blog-grids" th:switch="${blogs}" th:case="*">
-				<div class="col-md-4 wthree-blog" th:each="blog : ${blogs}" >
-					<div class="w3-agileits-blog">
-						<div class="w3-agileits-blog-img">
-							<a href="single.html">
-                                
-                                
-                                <img th:src="@{/GraficasRiobamba/pic/{id}(id=${blog.fotoblog}+.jpg)}"alt="" />
-                            
-                            
-                            </a>
-						</div>
-						<div class="w3-agileits-blog-text">
-							<a th:text="${blog.tituloblog}"></a>
-							<p th:text="${blog.descripcionblog}"></p>
-						</div>
-					</div>
-				</div>
-
 			
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!-- //blog -->
+	<!-- //gallery -->
 	<!-- footer -->
 	<div class="footer">
 		<div class="container">
@@ -260,8 +153,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //footer -->
+	<script src="/js/lightbox-plus-jquery.min.js"> </script>
 	<script  src="/js/move-top.js"></script>
-	<script src="/js/easing.js"></script>
+	<script  src="/s/easing.js"></script>
 	<!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {

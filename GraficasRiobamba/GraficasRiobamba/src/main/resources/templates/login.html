@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
+<!-- Head -->
 <head>
-    <meta charset="UTF-8">
-    <title>ADMINISTRADOR</title>
-    <link rel="stylesheet" href="/css/styleAdmin.css">
+
+<title>Gráficas Riobamba | Login</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<link href="/css/popuo-boxlogin.css" rel="stylesheet" type="text/css" />
+
+<!-- Style --> <link rel="stylesheet" href="/css/stylelogin.css" type="text/css" >
+
+<!-- Fonts -->
+<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+<!-- //Fonts -->
 
 </head>
+<!-- //Head -->
+
+<!-- Body -->
 <body>
- 
-     <!--Star login -->
-  <section class="loging">
-         <div class="container">
-               <div class="titulo-sistema">
-                   <h1>Graficas Riobamba </h1>
-                   <h3>Sistema de Autenticación</h3>
-               </div>
-               <div class="container-formulario">
-                      <div class="logo">
-                         <img src="/img/img-admin/user.png" alt="">
-                      </div>
-                      <div class="formulario">
-			                    <div th:if="${param.error}" style="color:black;"  >
+
+	<h1>GRÁFICAS RIOBAMBA</h1>
+
+	<div class="w3layoutscontaineragileits">
+	<h2>INCIAR SESION</h2>
+        
+                     <div th:if="${param.error}" style="color:black;"  >
            
 Nombre de usuario y contraseña inválidos.
         </div>
@@ -28,20 +40,90 @@ Nombre de usuario y contraseña inválidos.
             
 Cerraste Sesión con Exito!
         </div>
-					        
-                            <form th:action="@{/GraficasRiobamba/login}" method="post">
-                                <input  type="text" id="username" name="username" placeholder="USUARIO">
-                                <input type="password" id ="password" name="password" placeholder="CONTRASEÑA">
-                                    <input type="submit" class="btn" id="boton"  value="INICIAR SESIÓN"/>
-                          
-                             
-                             </form>
-  </div>
-                      
-               </div>
-         </div>
-  </section>
+					
+		<form th:action="@{/GraficasRiobamba/login}" method="post">
+			<input  type="text" id="username" name="username" placeholder="USUARIO">
+			  <input type="password" id ="password" name="password" placeholder="CONTRASEÑA">
+			<ul class="agileinfotickwthree">
+				<li>
+					<input type="checkbox" id="brand1" value="">
+					<label for="brand1"><span></span>Recordar</label>
+					<a href="#">Recuperar Contraseña?</a>
+				</li>
+			</ul>
+			<div class="aitssendbuttonw3ls">
+				   <input type="submit" class="btn" id="boton"  value="INICIAR SESIÓN"/>
+				<p>Resgistrar nueva Cuenta <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Aquí</a></p>
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>
+	
+	<!-- for register popup -->
+	<div id="small-dialog1" class="mfp-hide">
+		<div class="contact-form1">
+			<div class="contact-w3-agileits">
+				<h3>Registrar nueva Cuenta</h3>
+				<form action="#" method="post">
+						<div class="form-sub-w3ls">
+							<input placeholder="Nombre Usuario"  type="text" required="">
+							<div class="icon-agile">
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</div>
+						</div>
+						
+						<div class="form-sub-w3ls">
+							<input placeholder="Contraseña"  type="password" required="">
+							<div class="icon-agile">
+								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-sub-w3ls">
+							<input placeholder="Confirmar Contraseña"  type="password" required="">
+							<div class="icon-agile">
+								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+							</div>
+						</div>
+					<div class="login-check">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Aceptar Términos y Condiciones</label>
+					</div>
+					<div class="submit-w3l">
+						<input type="submit" value="Registrar">
+					</div>
+				</form>
+			</div>
+		</div>	
+	</div>
+	<!-- //for register popup -->
+	
+	<div class="w3footeragile">
+		<p> &copy; 2020 Requisitos de Software | ESPOCH <a href="www.espoch.edu.ec" target="_blank">www.espoch.edu.ec</a></p>
+	</div>
 
-  <!--End Login -->
+	
+	<script  src="/js/jquery-2.1.4.min.js"></script>
+
+	<!-- pop-up-box-js-file -->  
+		<script src="/js/jquery.magnific-popup.js" ></script>
+	<!--//pop-up-box-js-file -->
+	<script>
+		$(document).ready(function() {
+		$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+																		
+		});
+	</script>
+
 </body>
+<!-- //Body -->
+
 </html>
