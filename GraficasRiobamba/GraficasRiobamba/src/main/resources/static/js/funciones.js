@@ -12,7 +12,7 @@ function eliminar(codigo) {
 		.then((OK) => {
 		  if (OK) {
 			  $.ajax({
-				 url:"/GraficasRiobamba/eliminar/"+codigo,
+				 url:"/PortafolioEmpresarial/eliminar/"+codigo,
 				 success: function(res) {
 					console.log(res);
 				},			
@@ -21,7 +21,7 @@ function eliminar(codigo) {
 		      icon: "success",
 		    }).then((ok)=>{
 		    	if(ok){
-		    		location.href="/GraficasRiobamba/listar";
+		    		location.href="/PortafolioEmpresarial/listar";
 		    	}
 		    });
 		  } 

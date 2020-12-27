@@ -30,14 +30,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		         .and().headers().frameOptions().sameOrigin()
 				.and()
 				.formLogin()
-				.loginPage("/GraficasRiobamba/login")
+				.loginPage("/PortafolioEmpresarial/login")
 				.permitAll()
-				.successForwardUrl("/GraficasRiobamba/private")
+				.successForwardUrl("/PortafolioEmpresarial/private")
 				.and()
 				.logout()
 				.permitAll()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/GraficasRiobamba/logout"))
-				.logoutSuccessUrl("/GraficasRiobamba");  
+				.logoutRequestMatcher(new AntPathRequestMatcher("/PortafolioEmpresarial/logout"))
+				.logoutSuccessUrl("/PortafolioEmpresarial");  
 		}
 	@Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) 

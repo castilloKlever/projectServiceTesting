@@ -20,7 +20,7 @@ function eliminar(codigo) {
 		      icon: "success",
 		    }).then((ok)=>{
 		    	if(ok){
-		    		location.href="/GraficasRiobamba/listar";
+		    		location.href="/PortafolioEmpresarial/listar";
 		    	}
 		    });
 		  } 

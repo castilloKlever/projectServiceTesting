@@ -31,7 +31,7 @@ import com.grafrio.GraficasRiobamba.service.PictureService;
 
 
 @Controller
-@RequestMapping("/GraficasRiobamba")
+@RequestMapping("/PortafolioEmpresarial")
 
 public class ProductoControlador {
 
@@ -115,7 +115,7 @@ public class ProductoControlador {
 	 @PostMapping("/saveMensaje")
 	 public String guardarMensaje (@Validated Mensaje m, Model model) {
 		 serviceMensaje.save(m);  
-		 return"redirect:/GraficasRiobamba/index";
+		 return"redirect:/PortafolioEmpresarial/index";
 	 }
 	 
 	 
@@ -161,7 +161,7 @@ public class ProductoControlador {
 	     picService.uploadPicture(file, idPic);
 	     p.setFoto(idPic);
 	     service.save(p);  
-		 return"redirect:/GraficasRiobamba/listar";
+		 return"redirect:/PortafolioEmpresarial/listar";
 	 }
 	 
 	 
@@ -176,7 +176,7 @@ public class ProductoControlador {
 	     picService.uploadPicture(file, idPic);
 	     g.setFoto(idPic);
 	     galeriaService.save(g);  
-		 return"redirect:/GraficasRiobamba/galeria_creada";
+		 return"redirect:/PortafolioEmpresarial/galeria_creada";
 	 }
 	 
 	 
@@ -190,7 +190,7 @@ public class ProductoControlador {
 	     picService.uploadPicture(file, idPic);
 	     b.setFotoblog(idPic);
 	     blogService.save(b);  
-		 return"redirect:/GraficasRiobamba/blogs_creados";
+		 return"redirect:/PortafolioEmpresarial/blogs_creados";
 	 }
 	 
 	 
@@ -210,7 +210,7 @@ public class ProductoControlador {
 	 @GetMapping("/eliminar/{codigo}")
 		public String eliminarProducto(@PathVariable long codigo,Model model) {
 			service.delete(codigo);
-			return "redirect:/GraficasRiobamba/listar";
+			return "redirect:/PortafolioEmpresarial/listar";
 		}
 	
 	//CRUD PARA LOS BLOGS CREADOS 
@@ -237,7 +237,7 @@ public class ProductoControlador {
 	 @GetMapping("/eliminar_blog/{codigo}")
 		public String eliminarBlog(@PathVariable long codigo,Model model) {
 			blogService.delete(codigo);
-			return "redirect:/GraficasRiobamba/blogs_creados";
+			return "redirect:/PortafolioEmpresarial/blogs_creados";
 		}
      
 	 //CRUD PARA LAS GALERIAS CREADAS 
@@ -266,7 +266,7 @@ public class ProductoControlador {
 	 @GetMapping("/eliminar_galeria/{codigo}")
 		public String eliminarGaleria(@PathVariable long codigo,Model model) {
 			galeriaService.delete(codigo);
-			return "redirect:/GraficasRiobamba/galeria_creada";
+			return "redirect:/PortafolioEmpresarial/galeria_creada";
 		}
 	 
 	

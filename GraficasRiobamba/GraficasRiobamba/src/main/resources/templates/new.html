@@ -24,7 +24,7 @@
                           <img src="/img/img-admin/boton1.png" alt="">
                       </div>
                       <div class="boton">
-                            <a href="/GraficasRiobamba/index" target="_blank">
+                            <a href="/PortafolioEmpresarial/index" target="_blank">
                              <button id="btn-vista-Previa" class="btn-vista-Previa">Página Web Cliente</button>
                              </a>
                       </div>
@@ -38,7 +38,7 @@
                       </div>
                    
                       <div class="boton">
-                             <a href="/GraficasRiobamba/new" >
+                             <a href="/PortafolioEmpresarial/new" >
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
                             </a>
                       </div>
@@ -50,7 +50,7 @@
                       </div>
                    
                       <div class="boton">
-                             <a href="/GraficasRiobamba/new_galeria" >
+                             <a href="/PortafolioEmpresarial/new_galeria" >
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Proyecto Galeria</button>
                             </a>
                       </div>
@@ -68,7 +68,7 @@
                       </div>
                    
                       <div class="boton">
-                             <a href="/GraficasRiobamba/galeria_creada" >
+                             <a href="/PortafolioEmpresarial/galeria_creada" >
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Galeria de Poryectos </button>
                             </a>
                       </div>
@@ -111,12 +111,12 @@
 
                  <div class="overlay"   id="overlay">
                         <div class="popup" id="popup">
-                            <a href="/GraficasRiobamba/listar" id="btn-cerrar-popup" class="btn-cerrar-popup">
+                            <a href="/PortafolioEmpresarial/listar" id="btn-cerrar-popup" class="btn-cerrar-popup">
                             <img src="/img/img-admin/close.ico" alt="">
                             </a>
                             <h3 >Agregar Nuevo Producto</h3>
                             <div class="formulario">
-                            <form  th:action="@{/GraficasRiobamba/save}" th:object="${producto}" method="post" enctype="multipart/form-data"   >
+                            <form  th:action="@{/PortafolioEmpresarial/save}" th:object="${producto}" method="post" enctype="multipart/form-data"   >
                                     <div class="ocultar" >
                                          <input class="ocultar" type="text" th:field="*{codigo}" readonly="readonly" />
                                     </div>
@@ -154,7 +154,7 @@
                       
                       <div class="boton-sesion">
                             <div sec:authorize="isAuthenticated()">
-                           <a href="/GraficasRiobamba/logout">
+                           <a href="/PortafolioEmpresarial/logout">
                           <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
                          </a>
  </div>
@@ -240,14 +240,14 @@
                                                 <td th:text="${producto.descripcion}"> </td>
                                                 <td th:text="${producto.cantidad}"> </td>
                                                 <td th:text="${producto.precio}"> </td>
-                                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
+                                                <td><img th:src="@{/PortafolioEmpresarial/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
                                                 <!-- START CRUD -->
 <!-- START CRUD -->
   
                                                               <!-- START UPDATE-->
                                                                       <td>
                                                                           
-                                                                          <a th:href="@{/GraficasRiobamba/editar/}+${producto.codigo}">
+                                                                          <a th:href="@{/PortafolioEmpresarial/editar/}+${producto.codigo}">
                                                                               <img src="/img/img-admin/update.png" alt="">
                                                                               
                                                                           </a>
@@ -258,7 +258,7 @@
 
 
 
-                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/eliminar/}+${producto.codigo}" -->
+                                                                 <!-- START DELETE  th:href="@{/PortafolioEmpresarial/eliminar/}+${producto.codigo}" -->
                                                                        <td>
 																		<a th:onclick="eliminar([[${producto.codigo}]])" href="#">
 																		  <img src="/img/img-admin/delete.png" alt="">

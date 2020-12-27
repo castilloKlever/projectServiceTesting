@@ -190,7 +190,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 agi-pro filtr-item" data-category="1" data-sort=""  th:each="galeria : ${galerias}"   >
 						<div class="agileits_portfolio_grid">
 							<a class="group1" href="images/g1.jpg" title="Prefabrication">
-								<img   th:src="@{/GraficasRiobamba/pic/{id}(id=${galeria.foto}+.jpg)}"     class="img-responsive"  alt=""  /> 
+								<img   th:src="@{/PortafolioEmpresarial/pic/{id}(id=${galeria.foto}+.jpg)}"     class="img-responsive"  alt=""  /> 
 								<div class="w3_textbox">
 									<h4  th:text="${galeria.titulo}"> </h4>
 									<p th:text="${galeria.descripcion}"   > </p>
@@ -234,11 +234,11 @@
                                
                                     <div class="producto" th:each="producto : ${productos}">
                                              <div class="categoria">
-                                                 <h1 th:text="${producto.categoria}"> </h1>
+                                                 <h1 th:text="${producto.categoria}" style="font-size: 20px"> </h1>
                                              </div>
                                              
                                               <div class="img">
-                                                <img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" alt="">
+                                                <img th:src="@{/PortafolioEmpresarial/pic/{id}(id=${producto.foto}+.jpg)}" alt="">
                                               </div>
                                               <div class="info">
                                                   <div class="nombre">

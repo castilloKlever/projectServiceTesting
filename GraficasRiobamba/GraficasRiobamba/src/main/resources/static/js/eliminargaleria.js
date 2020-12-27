@@ -11,7 +11,7 @@ function eliminargaleria(codigo) {
 		.then((OK) => {
 		  if (OK) {
 			  $.ajax({
-				 url:"/GraficasRiobamba/eliminar_galeria/"+codigo,
+				 url:"/PortafolioEmpresarial/eliminar_galeria/"+codigo,
 				 success: function(res) {
 					console.log(res);
 				},			
@@ -20,7 +20,7 @@ function eliminargaleria(codigo) {
 		      icon: "success",
 		    }).then((ok)=>{
 		    	if(ok){
-		    		location.href="/GraficasRiobamba/galeria_creada";
+		    		location.href="/PortafolioEmpresarial/galeria_creada";
 		    	}
 		    });
 		  } 
