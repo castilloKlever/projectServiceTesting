@@ -1,0 +1,986 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+nav{
+
+  width: 100%;
+  position: fixed;
+
+
+}
+
+.nav1{
+
+background:transparent;
+    width: 100%;
+  height: 100px;
+  color:white;
+
+}
+
+.nav2{
+  background-color: #333333;
+   height: 100px;
+  color:white;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    z-index: 100;
+}
+ .section-title{
+
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+
+
+}
+ .section-title h1{
+
+    display: inline-block;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: black;
+    margin: 0 0 10px;
+    position: relative;
+
+
+
+}
+ .section-title h1:before{
+    content: '';
+    left: 0;
+    height: 2px;
+    right: 20%;
+    background-color: #04948c;
+    bottom: 0px;
+    position: absolute;
+
+
+}
+
+.text-center{
+    text-align: center!important;
+
+}
+
+.text-left{
+    text-align: left!important;
+
+}
+
+.text-right{
+    text-align: right;
+
+}
+/*     **********************************************************************************************************************************************                                                   STYLE HEADER SMART
+***************************************************************************************************************************************++++*/
+.logo, .logo img{ ;
+  width: 80px;
+   height:  80px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+header{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+
+
+    z-index: 10;
+}
+header .row{
+    justify-content:space-between;
+    align-items: center;
+
+}
+header .smart-name a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+header .navbar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+header .navbar ul li{
+    display: inline-block;
+    margin-left: 35px;
+}
+header .navbar ul li a{
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 72px;
+    color: white;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
+header .navbar ul li a::before{
+    content: '';
+    height: 3px;
+    background-color: white;
+    width: 0%;
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    transition: all .5s ease ;
+}
+header .navbar ul li a:hover::before{
+    width: 100%;
+    left: 0;
+}
+header .navbar ul li a.active::before{
+    width: 100%;
+    left: 0;
+}
+/*     **********************************************************************************************************************************************                                                   STYLE HOME SMART
+***************************************************************************************************************************************++++*/
+.home{
+    min-height: 100vh;
+    background-image: url(../imgIndex/img-fondos/fondo1.png);
+    background-size: cover;
+    background-position: center;
+    padding: 15px;
+    width: 100%;
+    height:600px;
+    background-attachment: fixed;
+    position: relative;
+     color: white;
+}
+
+.home:before{
+   content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+
+
+}
+
+.home .full-screen{
+
+    min-height: 100vh;
+}
+.home .home-content{
+
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+.home .home-content .block{
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-left: 35px;
+    border-left: 5px solid white;
+    margin-top: -50px;
+}
+.home .home-content .block h6{
+     color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+.home .home-content .block h1{
+    color: white;
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.home .home-content .block h3{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+.home .home-content .block .cv-btn{
+    padding-top: 20px;
+}
+.home .home-content .block .cv-btn a{
+    border-radius: 4px;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 25px;
+    text-decoration: none;
+    display:inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .5s ease ;
+    background-color: transparent;
+
+}
+.home .home-content .block .cv-btn a:hover{
+    background-color: #ffff;
+    color: black;
+
+}
+/*     **********************************************************************************************************************************************                                                   STYLE SECTION ABOUT SMART
+***************************************************************************************************************************************++++*/
+
+.about-smart{
+    padding: 100px 15px;
+    background: white;
+
+
+
+}
+
+.text-uppercase{
+    text-transform: uppercase!important;
+
+}
+
+.about-smart .section-title p.small{
+    display: block;
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+
+}
+
+
+
+.about-smart .about-content .img{
+    max-width: 33.33%;
+    height: auto;
+    position: relative;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+/*
+.about-smart .about-content .img:before{
+   content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);
+
+
+}
+*/
+.about-smart .about-content .img .texto-encima{
+
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 98%;
+    height: 100%;
+    border: 1px solid #04948c;
+    color: white;
+}
+
+
+
+.about-smart .about-content .img .texto-encima h3{
+    margin-top: 200px;
+    font-size: 37px;
+    text-align:center;
+}
+
+.about-smart .about-content .img img{
+    width: 100%;
+    height: 100%
+}
+
+.about-smart .about-content .text{
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+    padding-left: 30px;
+    height: auto;
+
+
+}
+
+.about-smart .about-content .text h4{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    color: black;
+}
+.about-smart .about-content .text h6{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 15px;
+    color: black;
+}
+.about-smart .about-content .text h6 span{
+   color: #04948c ;
+}
+.about-smart .about-content .text p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #838383;
+    margin: 0 0 20px;
+
+}
+
+.resumen_ejecutivo{
+
+    width: 100%;
+
+
+}
+.mision-vision{
+    margin-top: 18px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.mision-smart{
+     width: 50%;
+    height: auto;
+
+}
+
+
+
+.vision-smart{
+     width: 50%;
+    height: auto;
+
+}
+
+.mision-smart h4 , .vision-smart h4{
+     text-align: center;
+}
+
+.mision-smart p , .vision-smart p{
+     font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #838383;
+}
+
+
+
+
+
+/**********************************************************************************************************************************************                                                   STYLE SECTION SERVICES SMART
+***************************************************************************************************************************************++++*/
+.services{
+    background: #f5f8fd;
+    padding: 100px 0px 70px;
+
+}
+
+.services .section-title h1:before{
+    left: 30%;
+
+}
+
+.services .service-content {
+
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.services .service-content .boxService{
+    width: 100%;
+    height: auto;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    background-image: url(../img/img-fondos/fondo1.jpg);
+
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+.services .service-content .boxService .imagenService{
+    width: 49%;
+    height: 250px;
+
+
+    text-align:center;
+     padding-top: 20px;
+}
+
+.services .service-content .boxService .imagenService .imgService{
+    width: 60%;
+    height: 90%;
+
+     margin:0px auto;
+
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+
+}
+
+.services .service-content .boxService .imagenService .imgService  img {
+
+    height: 100%;
+    width: 100%;
+}
+
+.services .service-content .boxService .imagenService img{
+    width: 100%;
+    height: 100%;
+
+}
+.services .service-content .boxService .infoSerivice{
+    width: 49%;
+    height: 100%;
+    padding: 50px;
+
+    text-align: center;
+
+}
+
+.services .service-content .boxService .infoSerivice h5{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    margin: 0;
+
+
+}
+
+.services .service-content .boxService .infoSerivice p{
+     font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #838383;
+    margin: 10px 0 10px;
+
+}
+
+
+
+.services .service-content .box{
+    background: #ffffff;
+    padding: 30px;
+    flex: 0 0 calc(33.33% - 20px);
+    max-width:calc(33.33% - 20px);
+    margin-bottom: 30px;
+    border: 1px solid #eeeeee ;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+
+}
+.services .service-content .box::before{
+    content: '';
+    height: 2px;
+    background-color: #04948c;
+    position: absolute;
+    bottom: 0px;
+    width: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all .5s ease ;
+
+}
+.services .service-content .box:hover::before{
+    width: 100%;
+
+}
+.services .service-content .box .icon{
+    height: 60px;
+    width: 60px;
+    margin: 15px auto 20px;
+}
+
+.services .service-content .box h5{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    margin: 0;
+
+
+}
+
+.services .service-content .box p{
+     font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #838383;
+    margin: 10px 0 10px;
+
+}
+
+/*     **********************************************************************************************************************************************                                                   STYLE SECTION PORTAFOLIO WORKS SMART
+***************************************************************************************************************************************++++*/
+.portafolio{
+        background: #f5f8fd;
+    padding: 100px 7px;
+}
+.portafolio .section-title h1:before{
+    left: 30%;
+
+}
+
+
+
+.botones-work{
+  overflow: hidden;
+}
+
+
+
+
+.botones-work li{
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 45px;
+  padding: 6px 12px;
+  border: 1px solid #4cac53;
+  list-style: none;
+  color: #4cac53;
+}
+
+.botones-work li:hover{
+  background: #4cac53;
+  color:#fff;
+  cursor: pointer;
+}
+
+.botones-work .active{
+  background: #4cac53;
+  color:#fff;
+}
+
+.galeria-work{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+
+.cont-work{
+  margin:5px;
+  padding: 1em;
+  width: 31%;
+
+  overflow: hidden;
+  height:350px;
+
+}
+.img-proyecto{
+
+    width: 100%;
+    height:185px;
+
+
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+
+.img-proyecto img{
+  width: 100%;
+  height:100%;
+
+}
+
+.titulo-work{
+    width: 100%;
+    height:70px;
+    overflow: hidden;
+}
+.titulo-work h4{
+    text-align:justify;
+
+
+
+}
+
+.textos-work{
+
+  margin-top: 0px;
+   width: 100%;
+    height:30px;
+
+
+}
+
+.boton{
+    width: 100%;
+    height:45px;
+
+
+}
+
+.textos-work h4{
+
+  line-height: 30px;
+  font-weight: 300px;
+}
+
+
+/* footer*/
+
+
+.footer{
+    padding-top: 20px;
+    padding-bottom: 0px;
+ background-image: url(../imgIndex/img-fondos/fondo1.png);
+    background-size: cover;
+    background-position: center;
+     background-attachment: fixed;
+    position: relative;
+     color: white;
+   padding: 100px;
+    }
+
+.footer  .contact-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    z-index: 100;
+    color: white;
+   
+    }
+
+
+.footer:before{
+   content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-content .info-contact{
+        width: 49%;
+        height: 400px;
+
+
+
+    }
+.contact-content .info-contact .content-info {
+
+
+    width: 100%;
+    height: 49%;
+
+
+
+
+}
+
+.contact-content .info-contact .info{
+
+     width: 100%;
+    height: 49%;
+
+
+}
+
+.contact-content .info-contact .info h5{
+      font-size: 25px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+
+
+
+}
+
+.contact-content .info-contact .info pi{
+     font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: white;
+    margin: 10px 0 10px;
+
+}
+
+.contact-content .info-contact .info p{
+     font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: white;
+    margin: 10px 0 10px;
+
+}
+
+
+
+
+
+.contact-content .info-contact .telefonos{
+    margin-top: 5px;
+    width: 100%;
+    height: 49%;
+
+
+}
+
+.contact-content .info-contact .telefonos  .telefono, .correo, .ubicacion{
+
+    width: 60%;
+    height: 50%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.icon {
+   margin-top: 5px;
+     width: 30px;
+    height: 30px;
+
+    margin-left: 25px;
+
+
+
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+
+     position: relative;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+
+}
+
+.icon  img{
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+.text{
+    width: 80%;
+    height: 100%;
+
+}
+
+.text p {
+    float: left;
+     font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: white;
+    margin: 10px 0 10px;
+
+}
+.text pd {
+    float: left;
+     font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+    color:white;
+    margin: 6px 0 10px;
+
+}
+
+.contact-content .info-contact .Redes-Sociales{
+     margin-top:   10px;
+    width: 100%;
+    height: 40%;
+
+
+}
+
+
+
+
+.contact-content .info-contact .Redes-Sociales h5{
+   padding-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+
+
+
+}
+
+.contact-content .info-contact  .Redes-Sociales .contenedor-social {
+
+padding-left: 15px;
+  width: 60%;
+  height: 60px;
+
+
+      display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+
+.contact-content .info-contact  .Redes-Sociales .contenedor-social .icon-social{
+    width: 40px;
+    height: 40px;
+
+         margin-left: 10px;
+
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+    position: relative;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+
+
+}
+
+.contact-content .info-contact  .Redes-Sociales .contenedor-social .icon-social img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.contact-content .formulario-contact{
+            z-index: 100;
+         width: 49%;
+        height: 50%;
+
+    }
+
+
+
+
+/* formulario */
+contenedor-mensaje{
+    width: 100%;
+    height: auto;
+       float: left;
+       font-family: monospace;
+    z-index: 100;
+}
+form{
+    width: 100%;
+    margin: auto;
+
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+.text-contactos{
+    color: black;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+input ,textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+textarea{
+   max-width: 100%;
+ max-height: 50px;
+}
+
+#boton{
+    width: 50%;
+    margin-left:50%;
+
+
+}
+
+.buttonEnviar{
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 5px;
+    border-style: none;
+    border: 2px solid white;
+}
+#boton:hover{
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder { color: white; } 
+
+:-moz-placeholder { /* Firefox 18- */ color: white; } 
+
+::-moz-placeholder { /* Firefox 19+ */ color: white; } 
+
+:-ms-input-placeholder { color: white; }
+
+
+

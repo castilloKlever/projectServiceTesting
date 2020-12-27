@@ -59,8 +59,10 @@ public class ProductoControlador {
 	 
 	 @GetMapping("/index")
 	 public String mostrarIndex(Model model) {
-		 List<Blog>blog=blogService.listar();
-		 model.addAttribute("blogs", blog);
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
+		 List<Galeria>galeria=galeriaService.listar();
+		 model.addAttribute("galerias", galeria);
 		 return "index";
 	 }
 	 @GetMapping("/about")
